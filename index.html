@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Design That Evolve — Where we think beyond the screen</title>
-<link rel="icon" type="image/png" href="dte_favicon.png">
+<link rel="icon" href="./dte_favicon.png?v=2" type="image/png">
+<link rel="shortcut icon" href="./dte_favicon.png?v=2" type="image/png">
 <style>
 :root{--bg:#f4f3ee;--ink:#11110f;--muted:#706d66;--line:#d8d5cc;--card:#fbfaf6;--dark:#171714;--white:#f7f6f1;--acid:#caff3d}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
@@ -63,8 +64,25 @@ nav{
   transform:translateY(-2px);
   opacity:.9;
 }
-.hero{padding:160px 0 95px}.eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7A5CFF,#0084FF);border:1px solid var(--ink);margin-right:7px}
-h1{font-size:clamp(58px,9vw,126px);line-height:.86;letter-spacing:-.08em;margin:25px 0 50px;max-width:950px}.herofoot{display:grid;grid-template-columns:1.2fr .8fr;gap:50px}.lead{font-size:20px;letter-spacing:-.025em;max-width:650px}.note{border-left:1px solid var(--ink);padding-left:18px;color:var(--muted);font-size:14px;max-width:350px}
+  
+/*.hero{padding:160px 0 95px}*/
+  
+.hero{
+  min-height:calc(100vh - 78px);
+  padding:110px 0 55px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7A5CFF,#0084FF);border:1px solid var(--ink);margin-right:7px}
+h1{
+  font-size:clamp(58px,9vw,126px);
+  line-height:.86;
+  letter-spacing:-.08em;
+  margin:22px 0 38px;
+  max-width:950px;
+}
+.herofoot{display:grid;grid-template-columns:1.2fr .8fr;gap:50px}.lead{font-size:20px;letter-spacing:-.025em;max-width:650px}.note{border-left:1px solid var(--ink);padding-left:18px;color:var(--muted);font-size:14px;max-width:350px}
 section{padding:100px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;gap:40px;margin-bottom:42px}.title{font-size:clamp(38px,5vw,70px);line-height:.94;letter-spacing:-.065em;margin:12px 0 0;max-width:760px}.intro{max-width:360px;color:var(--muted);font-size:14px}
 .episodes{display:grid;gap:13px}.episode{display:grid;grid-template-columns:100px 1fr auto;align-items:center;gap:25px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:27px}.episode:hover{border-color:#99958b}.epno{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.episode h3{font-size:27px;line-height:1;letter-spacing:-.045em;margin:0 0 8px}.episode p{margin:0;color:var(--muted);font-size:13px}.status{padding:9px 13px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em}.upcoming{background:var(--card);color:var(--ink);border:1px solid var(--ink);}
   .locked{
@@ -299,7 +317,11 @@ footer .wrap{
   gap:4px;
 }
   .links{display:none}
-  .hero{padding:60px 0 70px}
+  .hero{
+  min-height:calc(100svh - 68px);
+  padding:90px 0 45px;
+  justify-content:center;
+}
   .herofoot,.split,.why,.founder,.faq{grid-template-columns:1fr;gap:30px}
   .head{display:block}
   .intro{margin-top:20px}
