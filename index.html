@@ -12,15 +12,147 @@ nav{height:78px;border-bottom:1px solid var(--line);display:flex;align-items:cen
 h1{font-size:clamp(58px,9vw,126px);line-height:.86;letter-spacing:-.08em;margin:25px 0 50px;max-width:950px}.herofoot{display:grid;grid-template-columns:1.2fr .8fr;gap:50px}.lead{font-size:20px;letter-spacing:-.025em;max-width:650px}.note{border-left:1px solid var(--ink);padding-left:18px;color:var(--muted);font-size:14px;max-width:350px}
 section{padding:100px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;gap:40px;margin-bottom:42px}.title{font-size:clamp(38px,5vw,70px);line-height:.94;letter-spacing:-.065em;margin:12px 0 0;max-width:760px}.intro{max-width:360px;color:var(--muted);font-size:14px}
 .episodes{display:grid;gap:13px}.episode{display:grid;grid-template-columns:100px 1fr auto;align-items:center;gap:25px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:27px}.episode:hover{border-color:#99958b}.epno{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.episode h3{font-size:27px;line-height:1;letter-spacing:-.045em;margin:0 0 8px}.episode p{margin:0;color:var(--muted);font-size:13px}.status{padding:9px 13px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em}.upcoming{background:var(--acid);border:1px solid var(--ink)}.locked{background:#ebe9e2;color:#8c877e}
+.whatsapp-update{
+  margin-top:18px;
+  padding:30px;
+  border:1px solid var(--ink);
+  border-radius:21px;
+  background:var(--dark);
+  color:var(--white);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:35px;
+}
+
+.whatsapp-label{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:800;
+  color:#aaa;
+  margin-bottom:12px;
+}
+
+.whatsapp-update h3{
+  margin:0 0 8px;
+  font-size:28px;
+  line-height:1;
+  letter-spacing:-.045em;
+}
+
+.whatsapp-update p{
+  margin:0;
+  max-width:620px;
+  color:#bbb;
+  font-size:13px;
+}
+
+.whatsapp-btn{
+  flex-shrink:0;
+  display:inline-block;
+  background:var(--acid);
+  color:var(--ink);
+  padding:14px 18px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+  white-space:nowrap;
+  border:1px solid var(--ink);
+  transition:transform .2s ease,opacity .2s ease;
+}
+
+.whatsapp-btn:hover{
+  transform:translateY(-2px);
+  opacity:.9;
+}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink);border:1px solid var(--ink);border-radius:25px;overflow:hidden}.panel{background:var(--card);padding:42px;min-height:300px}.panel.dark{background:var(--dark);color:var(--white)}.panel small{color:var(--muted);font-weight:800}.panel.dark small{color:#aaa}.panel h3{font-size:35px;line-height:1;letter-spacing:-.05em;margin:75px 0 12px}.panel p{color:var(--muted);max-width:450px}.panel.dark p{color:#bbb}
 .why{display:grid;grid-template-columns:1fr 1fr;gap:70px}.quote{font-size:clamp(40px,5vw,68px);line-height:.95;letter-spacing:-.065em;margin:10px 0}.copy{color:var(--muted);font-size:15px}.questions{border-top:1px solid var(--line);margin-top:30px}.q{display:flex;justify-content:space-between;padding:17px 0;border-bottom:1px solid var(--line);font-size:14px}.q span:last-child{color:var(--muted)}
 .founder{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.founderbox{min-height:500px;background:var(--dark);color:var(--white);border-radius:25px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}.founderbox .label{font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:.12em}.foundername{font-size:clamp(45px,5vw,68px);line-height:.88;letter-spacing:-.065em}.founderrole{color:#bbb;max-width:350px;font-size:14px}.story h2{font-size:clamp(40px,5vw,66px);line-height:.94;letter-spacing:-.065em;margin:0 0 25px}.story p{color:#4f4c46;font-size:16px;max-width:650px}.creds{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}.cred{border-top:1px solid var(--line);padding-top:13px}.cred small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}.cred strong{font-size:13px}
 .packages{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.package{background:var(--card);border:1px solid var(--line);border-radius:21px;padding:30px;min-height:290px;display:flex;flex-direction:column}.package.dark{background:var(--dark);color:var(--white);border-color:var(--dark)}.package h3{font-size:31px;letter-spacing:-.05em;margin:65px 0 10px}.package p{font-size:13px;color:var(--muted);margin:0}.package.dark p{color:#bbb}.arrow{margin-top:auto;font-size:22px}
 .faq{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px}.faqs{border-top:1px solid var(--ink)}details{border-bottom:1px solid var(--line);padding:19px 0}summary{cursor:pointer;font-size:14px;font-weight:800;list-style:none;display:flex;justify-content:space-between}summary::-webkit-details-marker{display:none}summary:after{content:"+";font-size:20px;font-weight:400}details[open] summary:after{content:"–"}details p{color:var(--muted);font-size:13px;max-width:650px;margin:14px 0 2px}
 .final{background:var(--dark);color:var(--white);padding:105px 0 65px}.final h2{font-size:clamp(55px,9vw,115px);line-height:.86;letter-spacing:-.08em;margin:0;max-width:950px}.finalrow{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-top:55px}.finalcopy{color:#bbb;max-width:430px;font-size:14px}.cta{display:inline-block;background:var(--acid);color:var(--ink);padding:15px 19px;border-radius:999px;font-weight:800;font-size:13px}
-footer{background:var(--dark);color:#999;border-top:1px solid #34332f;padding:22px 0;font-size:11px}footer .wrap{display:flex;justify-content:space-between}
+footer{
+  background:var(--dark);
+  color:#999;
+  border-top:1px solid #34332f;
+  padding:22px 0;
+  font-size:11px;
+}
+
+footer .wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+
+.socials{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.socials a{
+  width:34px;
+  height:34px;
+  border:1px solid #44423d;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#aaa;
+  transition:all .2s ease;
+}
+
+.socials svg{
+  width:16px;
+  height:16px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.socials a:hover{
+  color:var(--acid);
+  border-color:var(--acid);
+  transform:translateY(-2px);
+}
+
+.footer-tagline{
+  color:#777;
+}
 .modal{display:none;position:fixed;inset:0;background:#000a;z-index:5;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalbox{background:var(--card);max-width:680px;border-radius:25px;padding:38px;position:relative}.close{position:absolute;right:18px;top:12px;border:0;background:none;font-size:27px;cursor:pointer}.modalbox h3{font-size:clamp(38px,6vw,60px);line-height:.9;letter-spacing:-.06em;margin:18px 0}.modalbox p{color:var(--muted);font-size:14px}.coming{border:1px dashed #aaa;padding:16px;border-radius:15px;font-size:13px;margin-top:25px}
-@media(max-width:800px){.links{display:none}.hero{padding:60px 0 70px}.herofoot,.split,.why,.founder,.faq{grid-template-columns:1fr;gap:30px}.head{display:block}.intro{margin-top:20px}.episode{grid-template-columns:55px 1fr}.episode .status{grid-column:2;justify-self:start}.packages{grid-template-columns:1fr}.creds{grid-template-columns:1fr}.founderbox{min-height:390px}.finalrow,footer .wrap{display:block}.cta{margin-top:25px}}
+@media(max-width:800px){
+  .links{display:none}
+  .hero{padding:60px 0 70px}
+  .herofoot,.split,.why,.founder,.faq{grid-template-columns:1fr;gap:30px}
+  .head{display:block}
+  .intro{margin-top:20px}
+
+  .whatsapp-update{
+    display:block;
+  }
+
+  .whatsapp-btn{
+    margin-top:22px;
+  }
+
+  .episode{grid-template-columns:55px 1fr}
+  .episode .status{grid-column:2;justify-self:start}
+  .packages{grid-template-columns:1fr}
+  .creds{grid-template-columns:1fr}
+  .founderbox{min-height:390px}
+  .finalrow,footer .wrap{display:block}
+
+  .socials{
+    margin:18px 0;
+  }
+
+  .cta{margin-top:25px}
+}
 </style>
 </head>
 <body>
@@ -46,6 +178,25 @@ footer{background:var(--dark);color:#999;border-top:1px solid #34332f;padding:22
 <article class="episode"><div class="epno">Episode 01</div><button onclick="openModal()" style="border:0;background:none;text-align:left;cursor:pointer"><h3>Why do some experiences stay with us?</h3><p>Upcoming · The first Room to Evolve conversation</p></button><span class="status upcoming">Upcoming</span></article>
 <article class="episode"><div class="epno">Episode 02</div><div><h3>Who are we actually designing for?</h3><p>A question about people, context and assumptions.</p></div><span class="status locked">Locked</span></article>
 <article class="episode"><div class="epno">Episode 03</div><div><h3>When does a business actually need an app?</h3><p>When technology becomes the answer — and when it doesn't.</p></div><span class="status locked">Locked</span></article>
+</div>
+<div class="whatsapp-update">
+  <div>
+    <div class="whatsapp-label">Stay in the Room</div>
+    <h3>Don't miss the next conversation.</h3>
+    <p>
+      Join our WhatsApp Channel for episode updates, announcements and meeting links —
+      so you never miss a conversation worth being part of.
+    </p>
+  </div>
+
+  <a
+    class="whatsapp-btn"
+    href="https://whatsapp.com/channel/0029Vb8a3PF84Om9EAzXNP2O"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Join the WhatsApp Channel →
+  </a>
 </div>
 </section>
 
@@ -93,9 +244,55 @@ footer{background:var(--dark);color:#999;border-top:1px solid #34332f;padding:22
 </div></div>
 </section>
 
-<section class="final" id="contact"><div class="wrap"><h2>Don't just learn<br>what to design.<br>Understand <i>why.</i></h2><div class="finalrow"><div class="finalcopy">Room to Evolve is only the beginning. The first question is already waiting.</div><a class="cta" href="mailto:hello@designthatevolve.com?subject=Room to Evolve">Start the conversation →</a></div></div></section>
+<section class="final" id="contact"><div class="wrap"><h2>Don't just learn<br>what to design.<br>Understand <i>why.</i></h2><div class="finalrow"><div class="finalcopy">Room to Evolve is only the beginning. The first question is already waiting.</div><a class="cta" href="mailto:designthatevolve@gmail.com?subject=Room to Evolve">Start the conversation →</a></div></div></section>
 </main>
-<footer><div class="wrap"><div>© 2026 Design That Evolve</div><div>Where we think beyond the screen.</div></div></footer>
+<footer>
+  <div class="wrap">
+    <div>© 2026 Design That Evolve</div>
+
+    <div class="socials" aria-label="Design That Evolve social media">
+      <a href="https://www.instagram.com/design_that_evolve/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle cx="17.5" cy="6.5" r="1"></circle>
+        </svg>
+      </a>
+
+      <a href="https://www.linkedin.com/company/143493110/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 8v11"></path>
+          <path d="M5 5.5v.01"></path>
+          <path d="M10 19v-6a3 3 0 0 1 6 0v6"></path>
+          <path d="M10 10v9"></path>
+          <path d="M16 19v-5"></path>
+        </svg>
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=61593743371148" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 8h3V4h-3a5 5 0 0 0-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9a1 1 0 0 1 1-1z"></path>
+        </svg>
+      </a>
+
+      <a href="https://x.com/designthatevolv" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 4l14 16"></path>
+          <path d="M19 4L5 20"></path>
+        </svg>
+      </a>
+
+      <a href="https://youtube.com/@pragatiaggarwal25?si=OYOSXniXeCbzai1r" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="6" width="18" height="12" rx="4"></rect>
+          <path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"></path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="footer-tagline">Where we think beyond the screen.</div>
+  </div>
+</footer>
 
 <div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div class="kicker">Room to Evolve · Episode 01 · Upcoming</div><h3>Why do some experiences stay with us?</h3><p>Not every memorable experience comes from a beautiful interface. Some stay because of a moment, a decision, a feeling, a context — or because something simply felt effortless.</p><p>Episode 01 opens the conversation around what really makes an experience memorable, and why understanding the human side of design matters before creating another screen.</p><div class="coming"><b>Coming soon.</b><br>Join the room when the first conversation opens.</div></div></div>
 <script>
