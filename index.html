@@ -7,7 +7,22 @@
 <style>
 :root{--bg:#f4f3ee;--ink:#11110f;--muted:#706d66;--line:#d8d5cc;--card:#fbfaf6;--dark:#171714;--white:#f7f6f1;--acid:#caff3d}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
-nav{height:78px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+nav{
+  height:78px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(244,243,238,.92);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  padding:0 max(20px,calc((100vw - 1180px)/2));
+}
 .brand{
   display:flex;
   align-items:center;
@@ -47,7 +62,7 @@ nav{height:78px;border-bottom:1px solid var(--line);display:flex;align-items:cen
   transform:translateY(-2px);
   opacity:.9;
 }
-.hero{padding:85px 0 95px}.eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7A5CFF,#0084FF);border:1px solid var(--ink);margin-right:7px}
+.hero{padding:160px 0 95px}.eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7A5CFF,#0084FF);border:1px solid var(--ink);margin-right:7px}
 h1{font-size:clamp(58px,9vw,126px);line-height:.86;letter-spacing:-.08em;margin:25px 0 50px;max-width:950px}.herofoot{display:grid;grid-template-columns:1.2fr .8fr;gap:50px}.lead{font-size:20px;letter-spacing:-.025em;max-width:650px}.note{border-left:1px solid var(--ink);padding-left:18px;color:var(--muted);font-size:14px;max-width:350px}
 section{padding:100px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;gap:40px;margin-bottom:42px}.title{font-size:clamp(38px,5vw,70px);line-height:.94;letter-spacing:-.065em;margin:12px 0 0;max-width:760px}.intro{max-width:360px;color:var(--muted);font-size:14px}
 .episodes{display:grid;gap:13px}.episode{display:grid;grid-template-columns:100px 1fr auto;align-items:center;gap:25px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:27px}.episode:hover{border-color:#99958b}.epno{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.episode h3{font-size:27px;line-height:1;letter-spacing:-.045em;margin:0 0 8px}.episode p{margin:0;color:var(--muted);font-size:13px}.status{padding:9px 13px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em}.upcoming{background:var(--card);color:var(--ink);border:1px solid var(--ink);}.locked{background:#ebe9e2;color:#8c877e}
@@ -151,12 +166,13 @@ footer .wrap{
 .socials a{
   width:34px;
   height:34px;
-  border:1px solid #44423d;
+  border:1px solid #5552ff;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#aaa;
+  color:#7A5CFF;
+  background:linear-gradient(135deg,rgba(122,92,255,.08),rgba(0,132,255,.08));
   transition:all .2s ease;
 }
 
@@ -171,11 +187,12 @@ footer .wrap{
 }
 
 .socials a:hover{
-  color:var(--acid);
-  border-color:var(--acid);
+  color:#ffffff;
+  border-color:#0084FF;
+  background:linear-gradient(135deg,#7A5CFF,#0084FF);
   transform:translateY(-2px);
 }
-
+  
 .footer-tagline{
   color:#777;
 }
@@ -261,7 +278,7 @@ footer .wrap{
 }
 
 .brand{
-  gap:8px;
+  gap:4px;
 }
   .links{display:none}
   .hero{padding:60px 0 70px}
@@ -293,7 +310,7 @@ footer .wrap{
 </style>
 </head>
 <body>
-<header class="wrap"><nav>
+<header><nav>
 <a class="brand" href="#">
   <img src="dte_Logo.png" alt="Design That Evolve logo">
   <span>Design that <b>Evolve</b></span>
@@ -441,7 +458,7 @@ footer .wrap{
         </svg>
       </a>
 
-      <a href="https://youtube.com/@pragatiaggarwal25?si=OYOSXniXeCbzai1r" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <a href="https://www.youtube.com/@design_that_evolve" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <rect x="3" y="6" width="18" height="12" rx="4"></rect>
           <path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"></path>
