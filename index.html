@@ -65,13 +65,28 @@ nav{
   opacity:.9;
 }
   
-.hero{min-height:calc(100vh - 78px);padding:110px 0 70px;display:flex;flex-direction:column;justify-content:center;}.eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7A5CFF,#0084FF);border:1px solid var(--ink);margin-right:7px}
+.hero{min-height:calc(100vh - 78px);padding:110px 0 70px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.hero-image{
+  position:absolute;
+  right:15px;
+  top:50%;
+  transform:translateY(-50%);
+  width:360px;
+  max-width:32%;
+  height:auto;
+  z-index:1;
+  pointer-events:none;
+  user-select:none;
+}
+.eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7A5CFF,#0084FF);border:1px solid var(--ink);margin-right:7px}
 h1{
   font-size:clamp(58px,9vw,126px);
   line-height:.86;
   letter-spacing:-.08em;
   margin:25px 0 50px;
-  max-width:950px;
+  max-width:700px;
+  position:relative;
+  z-index:2;
 }
 .herofoot{display:grid;grid-template-columns:1.2fr .8fr;gap:50px}.lead{font-size:20px;letter-spacing:-.025em;max-width:650px}.note{border-left:1px solid var(--ink);padding-left:18px;color:var(--muted);font-size:14px;max-width:350px}
 section{padding:100px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;gap:40px;margin-bottom:42px}.title{font-size:clamp(38px,5vw,70px);line-height:.94;letter-spacing:-.065em;margin:12px 0 0;max-width:760px}.intro{max-width:360px;color:var(--muted);font-size:14px}
@@ -290,6 +305,31 @@ footer .wrap{
 }
 
 @media(max-width:800px){
+ @media(max-width:800px){
+
+  .hero{
+    min-height:calc(100svh - 68px);
+    padding:90px 0 45px;
+    justify-content:center;
+  }
+
+  .hero-image{
+    position:absolute;
+    right:-25px;
+    bottom:25px;
+    top:auto;
+    transform:none;
+    width:230px;
+    max-width:55%;
+    z-index:1;
+  }
+
+  .hero .eyebrow,
+  .hero h1,
+  .hero .herofoot{
+    position:relative;
+    z-index:2;
+  }
  .package-feature{
     display:block;
   }
@@ -352,6 +392,7 @@ footer .wrap{
 
 <main>
 <section class="wrap hero">
+<img class="hero-image" src="hero_image.png" alt="Are you designing for the future?">
 <div class="eyebrow"><span class="dot"></span>A new space for experience thinking Where we..</div>
 <h1>Think<br>Beyond<br>the Screen.</h1>
 <div class="herofoot">
