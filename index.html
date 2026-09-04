@@ -7,7 +7,31 @@
 <style>
 :root{--bg:#f4f3ee;--ink:#11110f;--muted:#706d66;--line:#d8d5cc;--card:#fbfaf6;--dark:#171714;--white:#f7f6f1;--acid:#caff3d}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
-nav{height:78px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:-.05em}.brand span{font-weight:400}.links{display:flex;gap:25px;color:var(--muted);font-size:13px}.navbtn{border:1px solid var(--ink);padding:10px 15px;border-radius:999px;font-size:12px;font-weight:800}
+nav{height:78px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  letter-spacing:-.05em;
+}
+
+.brand img{
+  width:32px;
+  height:32px;
+  object-fit:contain;
+  display:block;
+}
+
+.brand span{
+  font-weight:800;
+}
+
+.brand span b{
+  font-weight:400;
+}
+  
+.links{display:flex;gap:25px;color:var(--muted);font-size:13px}.navbtn{border:1px solid var(--ink);padding:10px 15px;border-radius:999px;font-size:12px;font-weight:800}
 .hero{padding:85px 0 95px}.eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--acid);border:1px solid var(--ink);margin-right:7px}
 h1{font-size:clamp(58px,9vw,126px);line-height:.86;letter-spacing:-.08em;margin:25px 0 50px;max-width:950px}.herofoot{display:grid;grid-template-columns:1.2fr .8fr;gap:50px}.lead{font-size:20px;letter-spacing:-.025em;max-width:650px}.note{border-left:1px solid var(--ink);padding-left:18px;color:var(--muted);font-size:14px;max-width:350px}
 section{padding:100px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;gap:40px;margin-bottom:42px}.title{font-size:clamp(38px,5vw,70px);line-height:.94;letter-spacing:-.065em;margin:12px 0 0;max-width:760px}.intro{max-width:360px;color:var(--muted);font-size:14px}
@@ -126,6 +150,14 @@ footer .wrap{
 }
 .modal{display:none;position:fixed;inset:0;background:#000a;z-index:5;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalbox{background:var(--card);max-width:680px;border-radius:25px;padding:38px;position:relative}.close{position:absolute;right:18px;top:12px;border:0;background:none;font-size:27px;cursor:pointer}.modalbox h3{font-size:clamp(38px,6vw,60px);line-height:.9;letter-spacing:-.06em;margin:18px 0}.modalbox p{color:var(--muted);font-size:14px}.coming{border:1px dashed #aaa;padding:16px;border-radius:15px;font-size:13px;margin-top:25px}
 @media(max-width:800px){
+  .brand img{
+  width:28px;
+  height:28px;
+}
+
+.brand{
+  gap:8px;
+}
   .links{display:none}
   .hero{padding:60px 0 70px}
   .herofoot,.split,.why,.founder,.faq{grid-template-columns:1fr;gap:30px}
@@ -157,7 +189,10 @@ footer .wrap{
 </head>
 <body>
 <header class="wrap"><nav>
-<a class="brand" href="#">Design that <span>Evolve.</span></a>
+<a class="brand" href="#">
+  <img src="dte_logo.png" alt="Design That Evolve logo">
+  <span>Design that <b>Evolve</b></span>
+</a>
 <div class="links"><a href="#room">Room to Evolve</a><a href="#founder">Founder</a><a href="#connect">Connect</a><a href="#faq">FAQ</a></div>
 <a class="navbtn" href="#room">Enter the Room →</a>
 </nav></header>
