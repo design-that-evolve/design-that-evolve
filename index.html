@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -12,1069 +13,1027 @@
 :root{--bg:#f4f3ee;--ink:#11110f;--muted:#706d66;--line:#d8d5cc;--card:#fbfaf6;--dark:#171714;--white:#f7f6f1;--acid:#caff3d}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
 nav{
-  height:78px;
-  border-bottom:1px solid var(--line);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:1000;
-  background:rgba(244,243,238,.92);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  padding:0 max(20px,calc((100vw - 1180px)/2));
+height:78px;
+border-bottom:1px solid var(--line);
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:1000;
+background:rgba(244,243,238,.92);
+backdrop-filter:blur(14px);
+-webkit-backdrop-filter:blur(14px);
+padding:0 max(20px,calc((100vw - 1180px)/2));
 }
 .brand{
-  display:flex;
-  align-items:center;
-  gap:4px;
-  font-weight:800;
-  letter-spacing:-.05em;
+display:flex;
+align-items:center;
+gap:4px;
+font-weight:800;
+letter-spacing:-.05em;
 }
 
 .brand img{
-  width:36px;
-  height:36px;
-  object-fit:contain;
-  display:block;
+width:36px;
+height:36px;
+object-fit;
+display;
 }
 
 .brand span{
-  font-weight:800;
+font-weight:800;
 }
 
 .brand span b{
-  font-weight:400;
+font-weight:400;
 }
-  
-.links{display:flex;gap:25px;color:var(--muted);font-size:13px}
+
+.links{display;gap:25px;color(--muted);font-size:13px}
 .navbtn{
-  background:linear-gradient(135deg,#7A5CFF,#0084FF);
-  color:#ffffff;
-  border:none;
-  padding:10px 15px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:800;
-  transition:transform .2s ease,opacity .2s ease;
+background(135deg,#7A5CFF,#0084FF);
+color:#ffffff;
+border;
+padding:10px 15px;
+border-radius:999px;
+font-size:12px;
+font-weight:800;
+transition .2s ease,opacity .2s ease;
 }
-  
-.navbtn:hover{
-  transform:translateY(-2px);
-  opacity:.9;
+
+.navbtn{
+transform(-2px);
+opacity:.9;
 }
-  
+
 .hero{
-  min-height:calc(100vh - 78px);
-  padding:110px 0 70px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
+min-height(100vh - 78px);
+padding:110px 0 70px;
+display;
+flex-direction;
+justify-content;
+position;
+overflow;
 }
 .hero-image{
-  position:absolute;
-  right:-5px;
-  top:52%;
-  transform:translateY(-50%);
-  width:430px;
-  max-width:36%;
-  height:auto;
-  display:block;
-  z-index:1;
-  pointer-events:none;
-  user-select:none;
+position;
+right:-5px;
+top:52%;
+transform(-50%);
+width:430px;
+max-width:36%;
+height;
+display;
+z-index:1;
+pointer-events;
+user-select;
 }
-   
+
 .hero .eyebrow,
 .hero h1,
 .hero .lead,
 .hero .note{
-  position:relative;
-  z-index:2;
+position;
+z-index:2;
 }
-  
+
 .herofoot{
-  display:grid;
-  grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);
-  gap:50px;
-  max-width:720px;
-  position:static;
+display;
+grid-template-columns(0,1.2fr) minmax(260px,.8fr);
+gap:50px;
+max-width:720px;
+position;
 }
 
 .lead{
-  font-size:20px;
-  letter-spacing:-.025em;
-  max-width:650px;
+font-size:20px;
+letter-spacing:-.025em;
+max-width:650px;
 }
 
 .note{
-  border-left:1px solid var(--ink);
-  padding-left:18px;
-  color:var(--muted);
-  font-size:14px;
-  max-width:350px;
+border-left:1px solid var(--ink);
+padding-left:18px;
+color(--muted);
+font-size:14px;
+max-width:350px;
 }
-.eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7A5CFF,#0084FF);border:1px solid var(--ink);margin-right:7px}
+.eyebrow,.kicker{font-size:11px;text-transform;letter-spacing:.13em;font-weight:800}.dot{display;width:8px;height:8px;border-radius:50%;background(135deg,#7A5CFF,#0084FF);border:1px solid var(--ink);margin-right:7px}
 h1{
-  font-size:clamp(58px,9vw,126px);
-  line-height:.86;
-  letter-spacing:-.08em;
-  margin:25px 0 50px;
-  max-width:720px;
-  position:relative;
-  z-index:2;
+font-size(58px,9vw,126px);
+line-height:.86;
+letter-spacing:-.08em;
+margin:25px 0 50px;
+max-width:720px;
+position;
+z-index:2;
 }
 
-  
-section{padding:100px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;gap:40px;margin-bottom:42px}.title{font-size:clamp(38px,5vw,70px);line-height:.94;letter-spacing:-.065em;margin:12px 0 0;max-width:760px}.intro{max-width:360px;color:var(--muted);font-size:14px}
-.episodes{display:grid;gap:13px}.episode{display:grid;grid-template-columns:100px 1fr auto;align-items:center;gap:25px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:27px}.episode:hover{border-color:#99958b}.epno{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.episode h3{font-size:27px;line-height:1;letter-spacing:-.045em;margin:0 0 8px}.episode p{margin:0;color:var(--muted);font-size:13px}.status{padding:9px 13px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em}.upcoming{background:var(--card);color:var(--ink);border:1px solid var(--ink);}
-  .locked{
-  background:#ebe9e2;
-  color:#8c877e;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
+section{padding:100px 0;border-top:1px solid var(--line)}.head{display;justify-content;gap:40px;margin-bottom:42px}.title{font-size(38px,5vw,70px);line-height:.94;letter-spacing:-.065em;margin:12px 0 0;max-width:760px}.intro{max-width:360px;color(--muted);font-size:14px}
+.episodes{display;gap:13px}.episode{display;grid-template-columns:100px 1fr auto;align-items;gap:25px;background(--card);border:1px solid var(--line);border-radius:20px;padding:27px}.episode.epno{font-size:11px;color(--muted);text-transform;letter-spacing:.1em}.episode h3{font-size:27px;line-height:1;letter-spacing:-.045em;margin:0 0 8px}.episode p{margin:0;color(--muted);font-size:13px}.status{padding:9px 13px;border-radius:999px;font-size:10px;font-weight:800;text-transform;letter-spacing:.09em}.upcoming{background(--card);color(--ink);border:1px solid var(--ink);}
+.locked{
+background:#ebe9e2;
+color:#8c877e;
+display;
+align-items;
+gap:6px;
 }
 
 .lock-icon{
-  width:12px;
-  height:12px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.8;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  flex-shrink:0;
+width:12px;
+height:12px;
+fill;
+stroke;
+stroke-width:1.8;
+stroke-linecap;
+stroke-linejoin;
+flex-shrink:0;
 }
 
 .whatsapp-update{
-  margin-top:18px;
-  padding:30px;
-  border:1px solid var(--ink);
-  border-radius:21px;
-  background:var(--dark);
-  color:var(--white);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:35px;
+margin-top:18px;
+padding:30px;
+border:1px solid var(--ink);
+border-radius:21px;
+background(--dark);
+color(--white);
+display;
+align-items;
+justify-content;
+gap:35px;
 }
 
 .whatsapp-label{
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-weight:800;
-  color:#aaa;
-  margin-bottom:12px;
+font-size:10px;
+text-transform;
+letter-spacing:.12em;
+font-weight:800;
+color:#aaa;
+margin-bottom:12px;
 }
 
 .whatsapp-update h3{
-  margin:0 0 8px;
-  font-size:28px;
-  line-height:1;
-  letter-spacing:-.045em;
+margin:0 0 8px;
+font-size:28px;
+line-height:1;
+letter-spacing:-.045em;
 }
 
 .whatsapp-update p{
-  margin:0;
-  max-width:620px;
-  color:#bbb;
-  font-size:13px;
+margin:0;
+max-width:620px;
+color:#bbb;
+font-size:13px;
 }
 
 .whatsapp-btn{
-  flex-shrink:0;
-  display:inline-block;
-  background:linear-gradient(135deg,#7A5CFF,#0084FF);
-  color:#ffffff;
-  padding:14px 18px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:800;
-  white-space:nowrap;
-  border:none;
-  transition:transform .2s ease,opacity .2s ease;
+flex-shrink:0;
+display;
+background(135deg,#7A5CFF,#0084FF);
+color:#ffffff;
+padding:14px 18px;
+border-radius:999px;
+font-size:12px;
+font-weight:800;
+white-space;
+border;
+transition .2s ease,opacity .2s ease;
 }
 
-.whatsapp-btn:hover{
-  transform:translateY(-2px);
-  opacity:.9;
+.whatsapp-btn{
+transform(-2px);
+opacity:.9;
 }
-.split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink);border:1px solid var(--ink);border-radius:25px;overflow:hidden}.panel{background:var(--card);padding:42px;min-height:300px}.panel.dark{background:var(--dark);color:var(--white)}.panel small{color:var(--muted);font-weight:800}.panel.dark small{color:#aaa}.panel h3{font-size:35px;line-height:1;letter-spacing:-.05em;margin:75px 0 12px}.panel p{color:var(--muted);max-width:450px}.panel.dark p{color:#bbb}
-.why{display:grid;grid-template-columns:1fr 1fr;gap:70px}.quote{font-size:clamp(40px,5vw,68px);line-height:.95;letter-spacing:-.065em;margin:10px 0}.copy{color:var(--muted);font-size:15px}.questions{border-top:1px solid var(--line);margin-top:30px}.q{display:flex;justify-content:space-between;padding:17px 0;border-bottom:1px solid var(--line);font-size:14px}.q span:last-child{color:var(--muted)}
+.split{display;grid-template-columns:1fr 1fr;gap:1px;background(--ink);border:1px solid var(--ink);border-radius:25px;overflow}.panel{background(--card);padding:42px;min-height:300px}.panel.dark{background(--dark);color(--white)}.panel small{color(--muted);font-weight:800}.panel.dark small{color:#aaa}.panel h3{font-size:35px;line-height:1;letter-spacing:-.05em;margin:75px 0 12px}.panel p{color(--muted);max-width:450px}.panel.dark p{color:#bbb}
+.why{display;grid-template-columns:1fr 1fr;gap:70px}.quote{font-size(40px,5vw,68px);line-height:.95;letter-spacing:-.065em;margin:10px 0}.copy{color(--muted);font-size:15px}.questions{border-top:1px solid var(--line);margin-top:30px}.q{display;justify-content;padding:17px 0;border-bottom:1px solid var(--line);font-size:14px}.q span{color(--muted)}
 .founder{
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:70px;
+display;
+grid-template-columns:.8fr 1.2fr;
+gap:70px;
 }
 
 .founder-image{
-  border:1px solid var(--line);
-  border-radius:25px;
-  overflow:hidden;
-  background:var(--card);
+border:1px solid var(--line);
+border-radius:25px;
+overflow;
+background(--card);
 }
 
 .founder-image img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-  object-position:center top;
+width:100%;
+height;
+display;
+object-fit;
+object-position top;
 }
 
 .founder-image img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-  object-position:center top;
+width:100%;
+height;
+display;
+object-fit;
+object-position top;
 }
 .story h2{
-  font-size:clamp(40px,5vw,66px);
-  line-height:.94;
-  letter-spacing:-.065em;
-  margin:0 0 25px;
+font-size(40px,5vw,66px);
+line-height:.94;
+letter-spacing:-.065em;
+margin:0 0 25px;
 }
 
 .story p{
-  color:#4f4c46;
-  font-size:16px;
-  max-width:650px;
+color:#4f4c46;
+font-size:16px;
+max-width:650px;
 }
 
 .story h2{
-  font-size:clamp(40px,5vw,66px);
-  line-height:.94;
-  letter-spacing:-.065em;
-  margin:0 0 25px;
+font-size(40px,5vw,66px);
+line-height:.94;
+letter-spacing:-.065em;
+margin:0 0 25px;
 }
 
 .story p{
-  color:#4f4c46;
-  font-size:16px;
-  max-width:650px;
+color:#4f4c46;
+font-size:16px;
+max-width:650px;
 }
 
 .creds{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:30px;
+display;
+grid-template-columns:1fr 1fr;
+gap:14px;
+margin-top:30px;
 }
 
 .cred{
-  border-top:1px solid var(--line);
-  padding-top:13px;
+border-top:1px solid var(--line);
+padding-top:13px;
 }
 
 .cred small{
-  display:block;
-  color:var(--muted);
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  margin-bottom:6px;
+display;
+color(--muted);
+font-size:10px;
+text-transform;
+letter-spacing:.1em;
+margin-bottom:6px;
 }
 
 .cred strong{
-  display:block;
-  font-size:13px;
-  line-height:1.4;
+display;
+font-size:13px;
+line-height:1.4;
 }
-.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.package{background:var(--card);border:1px solid var(--line);border-radius:21px;padding:30px;min-height:290px;display:flex;flex-direction:column}.package.dark{background:var(--dark);color:var(--white);border-color:var(--dark)}.package h3{font-size:31px;letter-spacing:-.05em;margin:65px 0 10px}.package p{font-size:13px;color:var(--muted);margin:0}.package.dark p{color:#bbb}.arrow{margin-top:auto;font-size:22px}
-.faq{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px}.faqs{border-top:1px solid var(--ink)}details{border-bottom:1px solid var(--line);padding:19px 0}summary{cursor:pointer;font-size:14px;font-weight:800;list-style:none;display:flex;justify-content:space-between}summary::-webkit-details-marker{display:none}summary:after{content:"+";font-size:20px;font-weight:400}details[open] summary:after{content:"–"}details p{color:var(--muted);font-size:13px;max-width:650px;margin:14px 0 2px}
-.final{
-  background:var(--dark);
-  color:var(--white);
-  padding:105px 0 70px;
-  overflow:hidden;
-}
-
-.final h2{
-  font-size:clamp(55px,9vw,115px);
-  line-height:.86;
-  letter-spacing:-.08em;
-  margin:0;
-  max-width:950px;
-}
-
-/* Footer visual stage */
-.footer-visual{
-  position:relative;
-  width:100%;
-  max-width:800px;
-  margin:35px auto 0;
-}
-
-/* Hat + blazer image */
-.footer-image{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-}
-
-/* CTA positioned inside the gap */
-.footer-cta{
-  position:absolute;
-  left:50%;
-  top:32%;
-  transform:translate(-50%,-50%);
-  z-index:2;
-  white-space:nowrap;
-}
-
-/* CTA hover should preserve its centered position */
-.footer-cta:hover{
-  transform:translate(-50%,-50%) translateY(-2px);
-}
-
-/* Supporting line */
-.finalcopy{
-  color:#bbb;
-  max-width:430px;
-  font-size:14px;
-  margin-top:5px;
-}
+.packages{display;grid-template-columns(3,1fr);gap:13px}.package{background(--card);border:1px solid var(--line);border-radius:21px;padding:30px;min-height:290px;display;flex-direction}.package.dark{background(--dark);color(--white);border-color(--dark)}.package h3{font-size:31px;letter-spacing:-.05em;margin:65px 0 10px}.package p{font-size:13px;color(--muted);margin:0}.package.dark p{color:#bbb}.arrow{margin-top;font-size:22px}
+.faq{display;grid-template-columns:.75fr 1.25fr;gap:70px}.faqs{border-top:1px solid var(--ink)}details{border-bottom:1px solid var(--line);padding:19px 0}summary{cursor;font-size:14px;font-weight:800;list-style;display;justify-content}summary::-webkit-details-marker{display}summary{content:"+";font-size:20px;font-weight:400}details[open] summary{content:"–"}details p{color(--muted);font-size:13px;max-width:650px;margin:14px 0 2px}
+.final{background(--dark);color(--white);padding:105px 0 65px}.final h2{font-size(55px,9vw,115px);line-height:.86;letter-spacing:-.08em;margin:0;max-width:950px}.finalrow{display;justify-content;align-items;gap:30px;margin-top:55px}.finalcopy{color:#bbb;max-width:430px;font-size:14px}
 .cta{
-  display:inline-block;
-  background:linear-gradient(135deg,#7A5CFF,#0084FF);
-  color:#ffffff;
-  padding:15px 19px;
-  border-radius:999px;
-  font-weight:800;
-  font-size:13px;
-  border:none;
-  transition:transform .2s ease,opacity .2s ease;
+display;
+background(135deg,#7A5CFF,#0084FF);
+color:#ffffff;
+padding:15px 19px;
+border-radius:999px;
+font-weight:800;
+font-size:13px;
+border;
+transition .2s ease,opacity .2s ease;
 }
 
-.cta:hover{
-  transform:translateY(-2px);
-  opacity:.9;
+.cta{
+transform(-2px);
+opacity:.9;
 }
+
 footer{
-  background:var(--dark);
-  color:#999;
-  border-top:1px solid #34332f;
-  padding:22px 0;
-  font-size:11px;
+
+background(--dark);
+
+color:#999;
+
+border-top:1px solid #34332f;
+
+padding:22px 0;
+
+font-size:11px;
+
 }
 
 footer .wrap{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:25px;
+
+display;
+
+justify-content;
+
+align-items;
+
+gap:25px;
+
 }
 
 .socials{
-  display:flex;
-  align-items:center;
-  gap:10px;
+
+display;
+
+align-items;
+
+gap:10px;
+
 }
 
 .socials a{
-  width:34px;
-  height:34px;
-  border:1px solid #5552ff;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#7A5CFF;
-  background:linear-gradient(135deg,rgba(122,92,255,.08),rgba(0,132,255,.08));
-  transition:all .2s ease;
+
+width:34px;
+
+height:34px;
+
+border:1px solid #5552ff;
+
+border-radius:50%;
+
+display;
+
+align-items;
+
+justify-content;
+
+color:#7A5CFF;
+
+background(135deg,rgba(122,92,255,.08),rgba(0,132,255,.08));
+
+transition .2s ease;
+
 }
 
 .socials svg{
-  width:16px;
-  height:16px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.7;
-  stroke-linecap:round;
-  stroke-linejoin:round;
+
+width:16px;
+
+height:16px;
+
+fill;
+
+stroke;
+
+stroke-width:1.7;
+
+stroke-linecap;
+
+stroke-linejoin;
+
 }
 
-.socials a:hover{
-  color:#ffffff;
-  border-color:#0084FF;
-  background:linear-gradient(135deg,#7A5CFF,#0084FF);
-  transform:translateY(-2px);
+.socials a{
+
+color:#ffffff;
+
+border-color:#0084FF;
+
+background(135deg,#7A5CFF,#0084FF);
+
+transform(-2px);
+
 }
-  
+
 .footer-tagline{
-  color:#777;
+
+color:#777;
+
 }
-.modal{display:none;position:fixed;inset:0;background:#000a;z-index:5;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalbox{background:var(--card);max-width:680px;border-radius:25px;padding:38px;position:relative}.close{position:absolute;right:18px;top:12px;border:0;background:none;font-size:27px;cursor:pointer}.modalbox h3{font-size:clamp(38px,6vw,60px);line-height:.9;letter-spacing:-.06em;margin:18px 0}.modalbox p{color:var(--muted);font-size:14px}.coming{border:1px dashed #aaa;padding:16px;border-radius:15px;font-size:13px;margin-top:25px}
+
+.modal{display;position;inset:0;background:#000a;z-index:5;align-items;justify-content;padding:20px}.modal.open{display}.modalbox{background(--card);max-width:680px;border-radius:25px;padding:38px;position}.close{position;right:18px;top:12px;border:0;background;font-size:27px;cursor}.modalbox h3{font-size(38px,6vw,60px);line-height:.9;letter-spacing:-.06em;margin:18px 0}.modalbox p{color(--muted);font-size:14px}.coming{border:1px dashed #aaa;padding:16px;border-radius:15px;font-size:13px;margin-top:25px}
+
 .package-modal-content{
-  max-width:720px;
+
+max-width:720px;
+
 }
 
 .package-label{
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.13em;
-  font-weight:800;
-  color:var(--muted);
+
+font-size:10px;
+
+text-transform;
+
+letter-spacing:.13em;
+
+font-weight:800;
+
+color(--muted);
+
 }
 
 .package-modal-content h3{
-  font-size:clamp(38px,6vw,64px);
-  line-height:.9;
-  letter-spacing:-.065em;
-  margin:18px 0 22px;
+
+font-size(38px,6vw,64px);
+
+line-height:.9;
+
+letter-spacing:-.065em;
+
+margin:18px 0 22px;
+
 }
 
 .package-modal-content .modal-intro{
-  color:#4f4c46;
-  font-size:16px;
-  max-width:600px;
-  margin-bottom:28px;
+
+color:#4f4c46;
+
+font-size:16px;
+
+max-width:600px;
+
+margin-bottom:28px;
+
 }
 
 .package-features{
-  border-top:1px solid var(--line);
-  margin-top:25px;
+
+border-top:1px solid var(--line);
+
+margin-top:25px;
+
 }
 
 .package-feature{
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
-  padding:15px 0;
-  border-bottom:1px solid var(--line);
-  font-size:13px;
+
+display;
+
+justify-content;
+
+gap:30px;
+
+padding:15px 0;
+
+border-bottom:1px solid var(--line);
+
+font-size:13px;
+
 }
 
-.package-feature span:last-child{
-  color:var(--muted);
-  text-align:right;
+.package-feature span{
+
+color(--muted);
+
+text-align;
+
 }
 
 .package-enquire{
-  display:inline-block;
-  margin-top:28px;
-  background:linear-gradient(135deg,#7A5CFF,#0084FF);
-  color:#fff;
-  padding:14px 19px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:800;
-  border:none;
-  transition:transform .2s ease,opacity .2s ease;
+
+display;
+
+margin-top:28px;
+
+background(135deg,#7A5CFF,#0084FF);
+
+color:#fff;
+
+padding:14px 19px;
+
+border-radius:999px;
+
+font-size:12px;
+
+font-weight:800;
+
+border;
+
+transition .2s ease,opacity .2s ease;
+
 }
 
-.package-enquire:hover{
-  transform:translateY(-2px);
-  opacity:.9;
+.package-enquire{
+
+transform(-2px);
+
+opacity:.9;
+
 }
 
- @media(max-width:800px){
+@media(max-width:800px){
 
-  .hero{
-    min-height:calc(100svh - 68px);
-    padding:90px 0 45px;
-    justify-content:center;
-  }
+.hero{
 
- .herofoot{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:0;
-  width:100%;
-}
-   
- .hero-image{
-  position:relative;
-  display:block;
-  width:100%;
-  max-width:360px;
-  height:auto;
-  margin:25px auto 30px;
-  right:auto;
-  top:auto;
-  bottom:auto;
-  transform:none;
-  z-index:1;
+min-height(100svh - 68px);
+
+padding:90px 0 45px;
+
+justify-content;
+
 }
 
-  .hero .eyebrow,
-  .hero h1,
-  .hero .herofoot{
-    position:relative;
-    z-index:2;
-  }
+.herofoot{
 
-   .hero .lead,
+display;
+
+grid-template-columns:1fr;
+
+gap:0;
+
+width:100%;
+
+}
+
+.hero-image{
+
+position;
+
+display;
+
+width:100%;
+
+max-width:360px;
+
+height;
+
+margin:25px auto 30px;
+
+right;
+
+top;
+
+bottom;
+
+transform;
+
+z-index:1;
+
+}
+
+.hero .eyebrow,
+
+.hero h1,
+
+.hero .herofoot{
+
+position;
+
+z-index:2;
+
+}
+
+.hero .lead,
+
 .hero .note{
-  position:relative;
-  z-index:2;
-}
-   
- .package-feature{
-    display:block;
-  }
 
-  .package-feature span:last-child{
-    display:block;
-    text-align:left;
-    margin-top:4px;
-  } 
-  .brand img{
-  width:30px;
-  height:30px;
+position;
+
+z-index:2;
+
+}
+
+.package-feature{
+
+display;
+
+}
+
+.package-feature span{
+
+display;
+
+text-align;
+
+margin-top:4px;
+
+}
+
+.brand img{
+
+width:30px;
+
+height:30px;
+
 }
 
 .brand{
-  gap:4px;
+
+gap:4px;
+
 }
-  .links{display:none}
-  .hero{
-  min-height:calc(100svh - 68px);
-  padding:90px 0 45px;
-  justify-content:center;
+
+.links{display}
+
+.hero{
+
+min-height(100svh - 68px);
+
+padding:90px 0 45px;
+
+justify-content;
+
 }
-  .herofoot,.split,.why,.founder,.faq{grid-template-columns:1fr;gap:30px}
-  .head{display:block}
-  .intro{margin-top:20px}
 
-  .whatsapp-update{
-    display:block;
-  }
+.herofoot,.split,.why,.founder,.faq{grid-template-columns:1fr;gap:30px}
 
-  .whatsapp-btn{
-    margin-top:22px;
-  }
+.head{display}
 
-  .episode{grid-template-columns:55px 1fr}
-  .episode .status{grid-column:2;justify-self:start}
-  .packages{grid-template-columns:1fr} 
-  .founder-image{
-  width:100%;
-  height:auto;
-  min-height:0;
-  border-radius:20px;
+.intro{margin-top:20px}
+
+.whatsapp-update{
+
+display;
+
+}
+
+.whatsapp-btn{
+
+margin-top:22px;
+
+}
+
+.episode{grid-template-columns:55px 1fr}
+
+.episode .status{grid-column:2;justify-self}
+
+.packages{grid-template-columns:1fr}
+
+.founder-image{
+
+width:100%;
+
+height;
+
+min-height:0;
+
+border-radius:20px;
+
 }
 
 .founder-image img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-  object-position:center top;
+
+width:100%;
+
+height;
+
+display;
+
+object-fit;
+
+object-position top;
+
 }
+
 .creds{
-  grid-template-columns:1fr;
-  gap:14px;
-  margin-top:25px;
-}
-.final{
-  padding:80px 0 50px;
+
+grid-template-columns:1fr;
+
+gap:14px;
+
+margin-top:25px;
+
 }
 
-.final h2{
-  font-size:clamp(48px,14vw,76px);
-  line-height:.88;
-}
+.finalrow,footer .wrap{display}
 
-.footer-visual{
-  width:100%;
-  max-width:520px;
-  margin:25px auto 0;
-}
-
-.footer-image{
-  width:100%;
-  height:auto;
-}
-
-.footer-cta{
-  top:32%;
-  left:50%;
-  padding:13px 16px;
-  font-size:12px;
-}
-
-.footer-cta:hover{
-  transform:translate(-50%,-50%);
-}
-
-.finalcopy{
-  margin-top:5px;
-  max-width:100%;
-  font-size:13px;
-}
-  /* Actual bottom footer */
-  footer .wrap{
-    display:block;
-  }
 .socials{
-    margin:18px 0;
-  }
 
-  .cta{margin-top:25px}
+margin:18px 0;
+
 }
+
+.cta{margin-top:25px}
+
+}
+
 </style>
-</head>
-<body>
-<header><nav>
-<a class="brand" href="#">
-  <img src="dte_Logo.png" alt="Design That Evolve logo">
-  <span>Design that <b>Evolve</b></span>
-</a>
-<div class="links"><a href="#room">Room to Evolve</a><a href="#founder">Founder</a><a href="#connect">Connect</a><a href="#faq">FAQ</a></div>
-<a class="navbtn" href="#room">Enter the Room →</a>
-</nav></header>
 
-<main>
-<section class="wrap hero">
-<div class="eyebrow"><span class="dot"></span>A new space for experience thinking Where we..</div>
-<h1>Think<br>Beyond<br>the Screen.</h1>
-<div class="herofoot">
-  <div class="lead">
-    <b>Design That Evolve</b> is a space to understand why experiences work,
-    fail, connect and stay with us — before rushing to decide what should be designed.
-  </div>
+</head> <body> <header><nav> <a class="brand" href="#"> <img src="dte_Logo.png" alt="Design That Evolve logo"> <span>Design that <b>Evolve</b></span> </a> <div class="links"><a href="#room">Room to Evolve</a><a href="#founder">Founder</a><a href="#connect">Connect</a><a href="#faq">FAQ</a></div> <a class="navbtn" href="#room">Enter the Room →</a> </nav></header>
 
-  <img 
-    class="hero-image" 
-    src="hero_image.png" 
-    alt="Are you designing for the future?"
-  >
+<main> <section class="wrap hero"> <div class="eyebrow"><span class="dot"></span>A new space for experience thinking Where we..</div> <h1>Think<br>Beyond<br>the Screen.</h1> <div class="herofoot"> <div class="lead"> <b>Design That Evolve</b> is a space to understand why experiences work, fail, connect and stay with us — before rushing to decide what should be designed. </div>
 
-  <div class="note">
-    Not another course. Not another module list. Not just another place to learn UX/UI.
-    <br><br>
-    <b>Come curious. Leave with better questions.</b>
-  </div>
-</div>
-</section>
+<img
 
-<section class="wrap" id="room">
-<div class="head"><div><div class="kicker">01 / Room to Evolve</div><h2 class="title">The first conversation starts with a question.</h2></div><div class="intro">A discussion series about the psychology, decisions and real-world conditions behind experiences — not just the screens they produce.</div></div>
-<div class="episodes">
-<article class="episode"><div class="epno">Episode 01</div><button onclick="openModal()" style="border:0;background:none;text-align:left;cursor:pointer"><h3>Why do some experiences stay with us?</h3><p><b>Beyond the Screen.</b> - The first Room to Evolve conversation about on what makes an experience meaningful - and why some stay with us long after the screen is gone.</p></button>
-  <span class="status upcoming">Upcoming</span></article>
-<article class="episode"><div class="epno">Episode 02</div><div><h3>Who designed your decision?</h3><p><b>You think you choose. But do you?</b> - A conversation about the psychology behind choice,the invisible influences in design and where persuasion begins.</p></div><span class="status locked">
-    <svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="5" y="10" width="14" height="11" rx="2"></rect>
-      <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+class="hero-image"
+
+src="hero_image.png"
+
+alt="Are you designing for the future?"
+
+> 
+> 
+
+<div class="note"> Not another course. Not another module list. Not just another place to learn UX/UI. <br><br> <b>Come curious. Leave with better questions.</b> </div> </div> </section>
+
+<section class="wrap" id="room"> <div class="head"><div><div class="kicker">01 / Room to Evolve</div><h2 class="title">The first conversation starts with a question.</h2></div><div class="intro">A discussion series about the psychology, decisions and real-world conditions behind experiences — not just the screens they produce.</div></div> <div class="episodes"> <article class="episode"><div class="epno">Episode 01</div><button onclick="openModal()" style="border:0;background:none;text-align:left;cursor:pointer"><h3>Why do some experiences stay with us?</h3><p><b>Beyond the Screen.</b> - The first Room to Evolve conversation about on what makes an experience meaningful - and why some stay with us long after the screen is gone.</p></button> <span class="status upcoming">Upcoming</span></article> <article class="episode"><div class="epno">Episode 02</div><div><h3>Who designed your decision?</h3><p><b>You think you choose. But do you?</b> - A conversation about the psychology behind choice,the invisible influences in design and where persuasion begins.</p></div><span class="status locked"> <svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true"> <rect x="5" y="10" width="14" height="11" rx="2"></rect> <path d="M8 10V7a4 4 0 0 1 8 0v3"></path> </svg> Locked </span></article> <article class="episode"><div class="epno">Episode 03</div><div><h3>Can we really judge an Experience Instantly?</h3><p><b>The 3-Second Lie.</b> - A conversation about first impressions,attention,cognitive biases and the obsession with speed in a world designed to distract us.</p></div> <span class="status locked"> <svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true"> <rect x="5" y="10" width="14" height="11" rx="2"></rect> <path d="M8 10V7a4 4 0 0 1 8 0v3"></path> </svg> Locked </span></article> </div> <div class="whatsapp-update"> <div> <div class="whatsapp-label">Stay in the Room</div> <h3 class="title">Don't miss the next conversation.</h3> <p> Join our WhatsApp Channel for episode updates, announcements and meeting links — so you never miss a conversation worth being part of. </p> </div>
+
+<a
+
+class="whatsapp-btn"
+
+href="https://whatsapp.com/channel/0029Vb8a3PF84Om9EAzXNP2O"
+
+target="_blank"
+
+rel="noopener noreferrer"
+
+> 
+> 
+
+```
+Join the WhatsApp Channel →
+```
+
+</a> </div> </section>
+
+<section class="wrap"> <div class="head"><div><div class="kicker">02 / The idea</div><h2 class="title">The interface is visible. The experience is much bigger.</h2></div><div class="intro">A screen is one touchpoint inside a much larger human and business experience.</div></div> <div class="split"> <div class="panel"><small>01 — WHAT WE QUESTION</small><h3>“We need an app.”</h3><p>Maybe. But before the solution, there is a reason. We want to understand the business goal, people, environment and real friction behind the request.</p></div> <div class="panel dark"><small>02 — WHAT WE BELIEVE</small><h3 class="title">Sometimes the right design is not another screen.</h3><p>A kiosk. A digital brochure. A service change. A website. An app. A simpler process. The answer should follow the problem.</p></div> </div> </section>
+
+<section class="wrap"> <div class="why"><div><div class="kicker">03 / Why this exists</div><p class="quote">We ask <b>why</b> before we decide <b>what.</b></p></div> <div class="copy"><p>Working with the industry for years — with startups and private limited companies across multiple project domains — revealed a recurring gap: the experience understood by the client and the experience finally delivered by designers can become two different things.</p><p>Design That Evolve is being built as the space to slow that moment down — to question the brief, understand the real situation and discuss the thinking between a business requirement and a design decision.</p><div class="questions"><div class="q"><span>What are we really trying to achieve?</span><span>WHY</span></div><div class="q"><span>Who experiences the problem?</span><span>WHO</span></div><div class="q"><span>Where does it actually happen?</span><span>WHERE</span></div><div class="q"><span>What should exist after we understand it?</span><span>WHAT</span></div></div></div></div> </section>
+
+<section class="wrap" id="founder"> <div class="head"><div><div class="kicker">04 / Founder's Desk</div><h2 class="title">The person behind the questions.</h2></div><div class="intro">A designer building the space she felt was missing.</div></div> <div class="founder"> <div class="founder-image"> <img src="founder_image.png" alt="Pragati Aggarwal — Founder of Design That Evolve" > </div> <div class="story"><h2>There was a gap I couldn't ignore.</h2><p>Working with the industry for years — with startups and private limited companies across multiple project domains — I kept seeing the same disconnect: the client requirement says one thing, the designer delivery becomes another, and somewhere between them the actual experience gets lost.</p><p>So I started Design That Evolve to create the space I felt was missing: a platform where we can discuss the <b>why</b> before rushing towards the <b>what</b>.</p><p>It is not built only for beginners. It is for anyone curious enough to question the obvious — and ambitious enough to stand out because they understand the experience, not just the output.</p> <div class="creds"><div class="cred"><small>Education</small><strong>B.Tech — Computer Science & Engineering</strong></div><div class="cred"><small>Design</small><strong>Masters of Industrial Design — MIT Ujjain</strong></div><div class="cred"><small>AI + Experience</small><strong>Certified by IIT Delhi — AI-Led UX, CX & Leadership</strong></div><div class="cred"><small>Industry</small><strong>Startups & Private Enterprises · Multi-Domain Product & Experience Design</strong></div></div></div> </div> </section>
+
+<section class="wrap" id="connect"> <div class="head"><div><div class="kicker">05 / Beyond the episodes</div><h2 class="title">Curious to uncover what your project really needs? Choose your space.</h2></div><div class="intro">For people who don't just want another answer — they want to unpack the question behind it.</div></div> <div class="packages">
+
+<a class="package" href="javascript:void(0)" onclick="openPackageModal('one')"> <div>01 </div> <h3>The Clarity Session</h3> <p>Step back. Understand what’s really happening before deciding what needs to change.</p> <div class="arrow">↗</div> </a>
+
+<a class="package dark" href="javascript:void(0)" onclick="openPackageModal('advanced')"> <div>02 </div> <h3 class="title">The Strategy Room</h3> <p>Go beyond the problem — uncover the opportunity and build a direction worth pursuing.</p> <div class="arrow">↗</div> </a>
+
+<a class="package" href="javascript:void(0)" onclick="openPackageModal('premium')"> <div>03 </div> <h3>The Design Partnership</h3> <p>From understanding to action — turn the right direction into something real.</p> <div class="arrow">↗</div> </a>
+
+</div> </section>
+
+<section class="wrap" id="faq"> <div class="faq"><div><div class="kicker">06 / FAQ</div><h2 class="title">Still wondering why?</h2></div> <div class="faqs"> <details><summary>Is Design That Evolve a course?</summary><p>No. Room to Evolve is a discussion series, not a module-by-module course. The aim is to explore how experiences actually work and why design decisions matter.</p></details> <details><summary>Is this only for beginners?</summary><p>No. It is for beginners, working designers, founders, teams and curious people who want to understand more deeply — and stand out by thinking beyond the obvious.</p></details> <details><summary>Do you only talk about UX/UI?</summary><p>No. UX/UI can be part of the conversation, but the lens is broader: people, behaviour, context, business goals, physical environments and digital touchpoints.</p></details> <details><summary>Will there be practical design work?</summary><p>Yes, where it helps the discussion. The focus is not hypothetical screen-making for its own sake. We care about real scenarios, real constraints and the reasoning behind a solution.</p></details> <details><summary>Can businesses work with Design That Evolve?</summary><p>Yes. We don't begin with “What do you want us to design?” We begin with “What are you trying to achieve?”</p></details> <details><summary>What if the solution isn't an app or website?</summary><p>That's fine. The right outcome could be a kiosk, digital brochure, service improvement, interface, product, system or something simpler. The problem determines the direction.</p></details> <details><summary>How can I interact directly?</summary><p>You can choose The Clarity Session, The Strategy Room or The Design Partnership, depending on how deeply you want to explore the challenge.</p></details> </div></div> </section>
+
+<section class="final" id="contact"><div class="wrap"><h2 class="title">Don't just learn<br>what to design.<br>Understand <i>why.</i></h2><div class="finalrow"><div class="finalcopy">Room to Evolve is only the beginning. The first question is already waiting.</div><a class="cta" href="mailto:designthatevolve@gmail.com?subject=Room to Evolve">Start the conversation →</a></div></div></section> </main> <footer> <div class="wrap"> <div>© 2026 Design That Evolve</div>
+
+<div class="socials" aria-label="Design That Evolve social media">
+  <a href="https://www.instagram.com/design_that_evolve/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+      <circle cx="12" cy="12" r="4"></circle>
+      <circle cx="17.5" cy="6.5" r="1"></circle>
     </svg>
-    Locked
-  </span></article>
-<article class="episode"><div class="epno">Episode 03</div><div><h3>Can we really judge an Experience Instantly?</h3><p><b>The 3-Second Lie.</b> - A conversation about first impressions,attention,cognitive biases and the obsession with speed in a world designed to distract us.</p></div>
-  <span class="status locked">
-    <svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="5" y="10" width="14" height="11" rx="2"></rect>
-      <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
-    </svg>
-    Locked
-  </span></article>
-</div>
-<div class="whatsapp-update">
-  <div>
-    <div class="whatsapp-label">Stay in the Room</div>
-    <h3 class="title">Don't miss the next conversation.</h3>
-    <p>
-      Join our WhatsApp Channel for episode updates, announcements and meeting links —
-      so you never miss a conversation worth being part of.
-    </p>
-  </div>
+  </a>
 
-  <a
-    class="whatsapp-btn"
-    href="https://whatsapp.com/channel/0029Vb8a3PF84Om9EAzXNP2O"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Join the WhatsApp Channel →
+  <a href="https://www.linkedin.com/company/143493110/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 8v11"></path>
+      <path d="M5 5.5v.01"></path>
+      <path d="M10 19v-6a3 3 0 0 1 6 0v6"></path>
+      <path d="M10 10v9"></path>
+      <path d="M16 19v-5"></path>
+    </svg>
+  </a>
+
+  <a href="https://www.facebook.com/profile.php?id=61593743371148" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M14 8h3V4h-3a5 5 0 0 0-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9a1 1 0 0 1 1-1z"></path>
+    </svg>
+  </a>
+
+  <a href="https://x.com/designthatevolv" target="_blank" rel="noopener noreferrer" aria-label="X">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 4l14 16"></path>
+      <path d="M19 4L5 20"></path>
+    </svg>
+  </a>
+
+  <a href="https://www.youtube.com/@design_that_evolve" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="6" width="18" height="12" rx="4"></rect>
+      <path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"></path>
+    </svg>
   </a>
 </div>
-</section>
 
-<section class="wrap">
-<div class="head"><div><div class="kicker">02 / The idea</div><h2 class="title">The interface is visible. The experience is much bigger.</h2></div><div class="intro">A screen is one touchpoint inside a much larger human and business experience.</div></div>
-<div class="split">
-<div class="panel"><small>01 — WHAT WE QUESTION</small><h3>“We need an app.”</h3><p>Maybe. But before the solution, there is a reason. We want to understand the business goal, people, environment and real friction behind the request.</p></div>
-<div class="panel dark"><small>02 — WHAT WE BELIEVE</small><h3 class="title">Sometimes the right design is not another screen.</h3><p>A kiosk. A digital brochure. A service change. A website. An app. A simpler process. The answer should follow the problem.</p></div>
-</div>
-</section>
+<div class="footer-tagline">Where we think beyond the screen.</div>
 
-<section class="wrap">
-<div class="why"><div><div class="kicker">03 / Why this exists</div><p class="quote">We ask <b>why</b> before we decide <b>what.</b></p></div>
-<div class="copy"><p>Working with the industry for years — with startups and private limited companies across multiple project domains — revealed a recurring gap: the experience understood by the client and the experience finally delivered by designers can become two different things.</p><p>Design That Evolve is being built as the space to slow that moment down — to question the brief, understand the real situation and discuss the thinking between a business requirement and a design decision.</p><div class="questions"><div class="q"><span>What are we really trying to achieve?</span><span>WHY</span></div><div class="q"><span>Who experiences the problem?</span><span>WHO</span></div><div class="q"><span>Where does it actually happen?</span><span>WHERE</span></div><div class="q"><span>What should exist after we understand it?</span><span>WHAT</span></div></div></div></div>
-</section>
+</div> </footer>
 
-<section class="wrap" id="founder">
-<div class="head"><div><div class="kicker">04 / Founder's Desk</div><h2 class="title">The person behind the questions.</h2></div><div class="intro">A designer building the space she felt was missing.</div></div>
-<div class="founder">
-<div class="founder-image">
-  <img 
-    src="founder_image.png" 
-    alt="Pragati Aggarwal — Founder of Design That Evolve"
-  >
-</div>
-<div class="story"><h2>There was a gap I couldn't ignore.</h2><p>Working with the industry for years — with startups and private limited companies across multiple project domains — I kept seeing the same disconnect: the client requirement says one thing, the designer delivery becomes another, and somewhere between them the actual experience gets lost.</p><p>So I started Design That Evolve to create the space I felt was missing: a platform where we can discuss the <b>why</b> before rushing towards the <b>what</b>.</p><p>It is not built only for beginners. It is for anyone curious enough to question the obvious — and ambitious enough to stand out because they understand the experience, not just the output.</p>
-<div class="creds"><div class="cred"><small>Education</small><strong>B.Tech — Computer Science & Engineering</strong></div><div class="cred"><small>Design</small><strong>Masters of Industrial Design — MIT Ujjain</strong></div><div class="cred"><small>AI + Experience</small><strong>Certified by IIT Delhi — AI-Led UX, CX & Leadership</strong></div><div class="cred"><small>Industry</small><strong>Startups & Private Enterprises · Multi-Domain Product & Experience Design</strong></div></div></div>
-</div>
-</section>
+<div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div class="kicker">Room to Evolve · Episode 01 · Upcoming</div><h3>Why do some experiences stay with us?</h3><p>Not every memorable experience comes from a beautiful interface. Some stay because of a moment, a decision, a feeling, a context — or because something simply felt effortless.</p><p>Episode 01 opens the conversation around what really makes an experience memorable, and why understanding the human side of design matters before creating another screen.</p><div class="coming"><b>Coming soon.</b><br>Join the room when the first conversation opens.</div></div></div> <!-- THE CLARITY SESSION MODAL --> <div class="modal" id="packageOneModal"> <div class="modalbox package-modal-content"> <button class="close" onclick="closePackageModal('packageOneModal')">×</button>
 
-<section class="wrap" id="connect">
-<div class="head"><div><div class="kicker">05 / Beyond the episodes</div><h2 class="title">Curious to uncover what your project really needs? Choose your space.</h2></div><div class="intro">For people who don't just want another answer — they want to unpack the question behind it.</div></div>
-<div class="packages">
+<div class="package-label">01 / The Clarity Session </div>
 
-<a class="package" href="javascript:void(0)" onclick="openPackageModal('one')">
-  <div>01 </div>
-  <h3>The Clarity Session</h3>
-  <p>Step back. Understand what’s really happening before deciding what needs to change.</p>
-  <div class="arrow">↗</div>
-</a>
+<h3>Understand before you change.</h3>
 
-<a class="package dark" href="javascript:void(0)" onclick="openPackageModal('advanced')">
-  <div>02 </div>
-  <h3 class="title">The Strategy Room</h3>
-  <p>Go beyond the problem — uncover the opportunity and build a direction worth pursuing.</p>
-  <div class="arrow">↗</div>
-</a>
+<p class="modal-intro">
+  A focused 1:1 session to understand what is really happening before
+  deciding what needs to be designed, changed or improved.
+</p>
 
-<a class="package" href="javascript:void(0)" onclick="openPackageModal('premium')">
-  <div>03 </div>
-  <h3>The Design Partnership</h3>
-  <p>From understanding to action — turn the right direction into something real.</p>
-  <div class="arrow">↗</div>
-</a>
-
-</div>
-</section>
-
-<section class="wrap" id="faq">
-<div class="faq"><div><div class="kicker">06 / FAQ</div><h2 class="title">Still wondering why?</h2></div>
-<div class="faqs">
-<details><summary>Is Design That Evolve a course?</summary><p>No. Room to Evolve is a discussion series, not a module-by-module course. The aim is to explore how experiences actually work and why design decisions matter.</p></details>
-<details><summary>Is this only for beginners?</summary><p>No. It is for beginners, working designers, founders, teams and curious people who want to understand more deeply — and stand out by thinking beyond the obvious.</p></details>
-<details><summary>Do you only talk about UX/UI?</summary><p>No. UX/UI can be part of the conversation, but the lens is broader: people, behaviour, context, business goals, physical environments and digital touchpoints.</p></details>
-<details><summary>Will there be practical design work?</summary><p>Yes, where it helps the discussion. The focus is not hypothetical screen-making for its own sake. We care about real scenarios, real constraints and the reasoning behind a solution.</p></details>
-<details><summary>Can businesses work with Design That Evolve?</summary><p>Yes. We don't begin with “What do you want us to design?” We begin with “What are you trying to achieve?”</p></details>
-<details><summary>What if the solution isn't an app or website?</summary><p>That's fine. The right outcome could be a kiosk, digital brochure, service improvement, interface, product, system or something simpler. The problem determines the direction.</p></details>
-<details><summary>How can I interact directly?</summary><p>You can choose The Clarity Session, The Strategy Room or The Design Partnership, depending on how deeply you want to explore the challenge.</p></details>
-</div></div>
-</section>
-
-<section class="final" id="contact">
-
-  <div class="wrap">
-
-    <h2 class="title">
-      Don't just learn<br>
-      what to design.<br>
-      Understand <i>why.</i>
-    </h2>
-
-    <div class="footer-visual">
-
-      <img
-        class="footer-image"
-        src="footer_image.png"
-        alt="Design That Evolve — Think beyond the screen"
-      >
-
-      <a
-        class="cta footer-cta"
-        href="mailto:designthatevolve@gmail.com?subject=Room to Evolve"
-      >
-        Start the conversation →
-      </a>
-
-    </div>
-
-    <div class="finalcopy">
-      Room to Evolve is only the beginning.
-      The first question is already waiting.
-    </div>
-
+<div class="package-features">
+  <div class="package-feature">
+    <span>Understanding</span>
+    <span>Unpack the problem, context and actual need.</span>
   </div>
 
-</section>
-</main>
-<footer>
-  <div class="wrap">
-    <div>© 2026 Design That Evolve</div>
-
-    <div class="socials" aria-label="Design That Evolve social media">
-      <a href="https://www.instagram.com/design_that_evolve/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-          <circle cx="12" cy="12" r="4"></circle>
-          <circle cx="17.5" cy="6.5" r="1"></circle>
-        </svg>
-      </a>
-
-      <a href="https://www.linkedin.com/company/143493110/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M5 8v11"></path>
-          <path d="M5 5.5v.01"></path>
-          <path d="M10 19v-6a3 3 0 0 1 6 0v6"></path>
-          <path d="M10 10v9"></path>
-          <path d="M16 19v-5"></path>
-        </svg>
-      </a>
-
-      <a href="https://www.facebook.com/profile.php?id=61593743371148" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M14 8h3V4h-3a5 5 0 0 0-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9a1 1 0 0 1 1-1z"></path>
-        </svg>
-      </a>
-
-      <a href="https://x.com/designthatevolv" target="_blank" rel="noopener noreferrer" aria-label="X">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M5 4l14 16"></path>
-          <path d="M19 4L5 20"></path>
-        </svg>
-      </a>
-
-      <a href="https://www.youtube.com/@design_that_evolve" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3" y="6" width="18" height="12" rx="4"></rect>
-          <path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"></path>
-        </svg>
-      </a>
-    </div>
-
-    <div class="footer-tagline">Where we think beyond the screen.</div>
+  <div class="package-feature">
+    <span>Audit</span>
+    <span>Review the existing experience, product or design.</span>
   </div>
-</footer>
 
-<div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div class="kicker">Room to Evolve · Episode 01 · Upcoming</div><h3>Why do some experiences stay with us?</h3><p>Not every memorable experience comes from a beautiful interface. Some stay because of a moment, a decision, a feeling, a context — or because something simply felt effortless.</p><p>Episode 01 opens the conversation around what really makes an experience memorable, and why understanding the human side of design matters before creating another screen.</p><div class="coming"><b>Coming soon.</b><br>Join the room when the first conversation opens.</div></div></div>
-<!-- THE CLARITY SESSION MODAL -->
-<div class="modal" id="packageOneModal">
-  <div class="modalbox package-modal-content">
-    <button class="close" onclick="closePackageModal('packageOneModal')">×</button>
-
-    <div class="package-label">01 / The Clarity Session </div>
-
-    <h3>Understand before you change.</h3>
-
-    <p class="modal-intro">
-      A focused 1:1 session to understand what is really happening before
-      deciding what needs to be designed, changed or improved.
-    </p>
-
-    <div class="package-features">
-      <div class="package-feature">
-        <span>Understanding</span>
-        <span>Unpack the problem, context and actual need.</span>
-      </div>
-
-      <div class="package-feature">
-        <span>Audit</span>
-        <span>Review the existing experience, product or design.</span>
-      </div>
-
-      <div class="package-feature">
-        <span>Outcome</span>
-        <span>Clear observations, gaps and areas worth exploring.</span>
-      </div>
-    </div>
-
-    <a
-      class="package-enquire"
-      href="mailto:designthatevolve@gmail.com?subject=Enquiry - The Clarity Session"
-    >
-      Enquire for Clarity →
-    </a>
+  <div class="package-feature">
+    <span>Outcome</span>
+    <span>Clear observations, gaps and areas worth exploring.</span>
   </div>
 </div>
 
+<a
+  class="package-enquire"
+  href="mailto:designthatevolve@gmail.com?subject=Enquiry - The Clarity Session"
+>
+  Enquire for Clarity →
+</a>
+
+</div> </div>
 
 <!-- The STRATEGY ROOM MODAL -->
-<div class="modal" id="packageAdvancedModal">
-  <div class="modalbox package-modal-content">
-    <button class="close" onclick="closePackageModal('packageAdvancedModal')">×</button>
 
-    <div class="package-label">02 / The Strategy Room</div>
+<div class="modal" id="packageAdvancedModal"> <div class="modalbox package-modal-content"> <button class="close" onclick="closePackageModal('packageAdvancedModal')">×</button>
 
-    <h3>Understand it. Then build the strategy.</h3>
+<div class="package-label">02 / The Strategy Room</div>
 
-    <p class="modal-intro">
-      Everything in The Clarity Session, taken further into strategic thinking —
-      helping you move from identifying the problem to deciding the direction.
-    </p>
+<h3>Understand it. Then build the strategy.</h3>
 
-    <div class="package-features">
-      <div class="package-feature">
-        <span>Everything in Clarity</span>
-        <span>Understanding + Audit.</span>
-      </div>
+<p class="modal-intro">
+  Everything in The Clarity Session, taken further into strategic thinking —
+  helping you move from identifying the problem to deciding the direction.
+</p>
 
-      <div class="package-feature">
-        <span>Strategy Building</span>
-        <span>Define direction, priorities and opportunities.</span>
-      </div>
+<div class="package-features">
+  <div class="package-feature">
+    <span>Everything in Clarity</span>
+    <span>Understanding + Audit.</span>
+  </div>
 
-      <div class="package-feature">
-        <span>Experience Thinking</span>
-        <span>Connect business goals, people and design decisions.</span>
-      </div>
+  <div class="package-feature">
+    <span>Strategy Building</span>
+    <span>Define direction, priorities and opportunities.</span>
+  </div>
 
-      <div class="package-feature">
-        <span>Outcome</span>
-        <span>A clearer strategic direction for what comes next.</span>
-      </div>
-    </div>
+  <div class="package-feature">
+    <span>Experience Thinking</span>
+    <span>Connect business goals, people and design decisions.</span>
+  </div>
 
-    <a
-      class="package-enquire"
-      href="mailto:designthatevolve@gmail.com?subject=Enquiry - The Strategy Room"
-    >
-      Enquire for Strategy →
-    </a>
+  <div class="package-feature">
+    <span>Outcome</span>
+    <span>A clearer strategic direction for what comes next.</span>
   </div>
 </div>
 
+<a
+  class="package-enquire"
+  href="mailto:designthatevolve@gmail.com?subject=Enquiry - The Strategy Room"
+>
+  Enquire for Strategy →
+</a>
+
+</div> </div>
 
 <!-- THE DESIGN PARTNERSHIP MODAL -->
-<div class="modal" id="packagePremiumModal">
-  <div class="modalbox package-modal-content">
-    <button class="close" onclick="closePackageModal('packagePremiumModal')">×</button>
 
-    <div class="package-label">03 / The Design Partnership</div>
+<div class="modal" id="packagePremiumModal"> <div class="modalbox package-modal-content"> <button class="close" onclick="closePackageModal('packagePremiumModal')">×</button>
 
-    <h3>Turn the direction into something real.</h3>
+<div class="package-label">03 / The Design Partnership</div>
 
-    <p class="modal-intro">
-      The deepest level of interaction — combining understanding, audit and
-      strategy with the possibility of moving into an actual project engagement.
-    </p>
+<h3>Turn the direction into something real.</h3>
 
-    <div class="package-features">
-      <div class="package-feature">
-        <span>Everything in Advanced</span>
-        <span>Understanding + Audit + Strategy.</span>
-      </div>
+<p class="modal-intro">
+  The deepest level of interaction — combining understanding, audit and
+  strategy with the possibility of moving into an actual project engagement.
+</p>
 
-      <div class="package-feature">
-        <span>Project Direction</span>
-        <span>Translate the strategy into a project opportunity.</span>
-      </div>
+<div class="package-features">
+  <div class="package-feature">
+    <span>Everything in Advanced</span>
+    <span>Understanding + Audit + Strategy.</span>
+  </div>
 
-      <div class="package-feature">
-        <span>Project Deal</span>
-        <span>Explore a potential project engagement together.</span>
-      </div>
+  <div class="package-feature">
+    <span>Project Direction</span>
+    <span>Translate the strategy into a project opportunity.</span>
+  </div>
 
-      <div class="package-feature">
-        <span>Outcome</span>
-        <span>A path from conversation to meaningful execution.</span>
-      </div>
-    </div>
+  <div class="package-feature">
+    <span>Project Deal</span>
+    <span>Explore a potential project engagement together.</span>
+  </div>
 
-    <a
-      class="package-enquire"
-      href="mailto:designthatevolve@gmail.com?subject=Enquiry - The Design Partnership"
-    >
-      Enquire for Partnership →
-    </a>
+  <div class="package-feature">
+    <span>Outcome</span>
+    <span>A path from conversation to meaningful execution.</span>
   </div>
 </div>
-<script>
+
+<a
+  class="package-enquire"
+  href="mailto:designthatevolve@gmail.com?subject=Enquiry - The Design Partnership"
+>
+  Enquire for Partnership →
+</a>
+
+</div> </div> <script>
 
 const m = document.getElementById("modal");
 
 function openModal(){
-  m.classList.add("open");
-  document.body.style.overflow="hidden";
+
+m.classList.add("open");
+
+document.body.style.overflow="hidden";
+
 }
 
 function closeModal(){
-  m.classList.remove("open");
-  document.body.style.overflow="";
+
+m.classList.remove("open");
+
+document.body.style.overflow="";
+
 }
 
 m.addEventListener("click",e=>{
-  if(e.target===m) closeModal();
-});
 
+if(e.target===m) closeModal();
+
+});
 
 /* PACKAGE MODALS */
 
 function openPackageModal(type){
 
-  let modalId;
+let modalId;
 
-  if(type === "one"){
-    modalId = "packageOneModal";
-  }
+if(type === "one"){
 
-  if(type === "advanced"){
-    modalId = "packageAdvancedModal";
-  }
+modalId = "packageOneModal";
 
-  if(type === "premium"){
-    modalId = "packagePremiumModal";
-  }
-
-  const packageModal = document.getElementById(modalId);
-
-  if(packageModal){
-    packageModal.classList.add("open");
-    document.body.style.overflow="hidden";
-  }
 }
 
+if(type === "advanced"){
+
+modalId = "packageAdvancedModal";
+
+}
+
+if(type === "premium"){
+
+modalId = "packagePremiumModal";
+
+}
+
+const packageModal = document.getElementById(modalId);
+
+if(packageModal){
+
+packageModal.classList.add("open");
+
+document.body.style.overflow="hidden";
+
+}
+
+}
 
 function closePackageModal(modalId){
 
-  const packageModal = document.getElementById(modalId);
+const packageModal = document.getElementById(modalId);
 
-  if(packageModal){
-    packageModal.classList.remove("open");
-    document.body.style.overflow="";
-  }
+if(packageModal){
+
+packageModal.classList.remove("open");
+
+document.body.style.overflow="";
+
 }
 
+}
 
 /* CLOSE PACKAGE MODALS WHEN CLICKING OUTSIDE */
 
 document.querySelectorAll(".modal").forEach(modal => {
 
-  modal.addEventListener("click", e => {
+modal.addEventListener("click", e => {
 
-    if(e.target === modal){
+if(e.target === modal){
 
-      modal.classList.remove("open");
-      document.body.style.overflow="";
+  modal.classList.remove("open");
+  document.body.style.overflow="";
 
-    }
-
-  });
+}
 
 });
 
+});
 
 /* ESCAPE KEY */
 
 document.addEventListener("keydown", e => {
 
-  if(e.key === "Escape"){
+if(e.key === "Escape"){
 
-    document.querySelectorAll(".modal.open").forEach(modal => {
-      modal.classList.remove("open");
-    });
+document.querySelectorAll(".modal.open").forEach(modal => {
+  modal.classList.remove("open");
+});
 
-    document.body.style.overflow="";
+document.body.style.overflow="";
 
-  }
+}
 
 });
 
-</script>
-</body>
-</html>
+</script> </body> </html>
