@@ -134,45 +134,45 @@ section{padding:100px 0;border-top:1px solid var(--line)}.head{display:flex;just
 .episodes{display:grid;gap:13px}.episode{display:grid;grid-template-columns:100px 1fr auto;:center;gap:25px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:27px}.episode:hover{border-color:#99958b}.epno{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.episode h3{font-size:27px;line-height:1;letter-spacing:-.045em;margin:0 0 8px}.episode p{margin:0;color:var(--muted);font-size:13px}
 /* Episode status badges */
 .status{
-  width:112px;
-  height:82px;
-
-  display:flex;
+  display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:6px;
+
+  padding:14px 18px;
 
   border-radius:999px;
 
   font-size:10px;
   font-weight:800;
-  letter-spacing:.16em;
+  letter-spacing:.09em;
   text-transform:uppercase;
 
+  line-height:1;
   white-space:nowrap;
   flex-shrink:0;
 }
-
-/* UPCOMING */
 .status.upcoming{
-  border:1px solid var(--ink);
-  background:transparent;
+  background:var(--card);
   color:var(--ink);
+  border:1px solid var(--ink);
 }
 
-/* LOCKED */
+  /* LOCKED */
 .status.locked{
+  background:#ebe9e2;
+  color:#8c877e;
   border:none;
-  background:#e9e7e0;
-  color:var(--muted);
 }
 
 .lock-icon{
-  width:14px;
-  height:14px;
+  width:12px;
+  height:12px;
+  fill:none;
   stroke:currentColor;
   stroke-width:1.8;
-  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
   flex-shrink:0;
 }
 
@@ -612,14 +612,6 @@ margin-top:22px;
 
 .episode{grid-template-columns:55px 1fr}
 .episode .status{grid-column:2;justify-self:start}
-.status{
-  width:auto;
-  height:46px;
-  padding:0 18px;
-
-  font-size:9px;
-  letter-spacing:.14em;
-}
 .packages{grid-template-columns:1fr}
 .founder-image{
 width:100%;
