@@ -180,6 +180,80 @@ footer .wrap{
   color:#777;
 }
 .modal{display:none;position:fixed;inset:0;background:#000a;z-index:5;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalbox{background:var(--card);max-width:680px;border-radius:25px;padding:38px;position:relative}.close{position:absolute;right:18px;top:12px;border:0;background:none;font-size:27px;cursor:pointer}.modalbox h3{font-size:clamp(38px,6vw,60px);line-height:.9;letter-spacing:-.06em;margin:18px 0}.modalbox p{color:var(--muted);font-size:14px}.coming{border:1px dashed #aaa;padding:16px;border-radius:15px;font-size:13px;margin-top:25px}
+.package-modal-content{
+  max-width:720px;
+}
+
+.package-label{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:800;
+  color:var(--muted);
+}
+
+.package-modal-content h3{
+  font-size:clamp(38px,6vw,64px);
+  line-height:.9;
+  letter-spacing:-.065em;
+  margin:18px 0 22px;
+}
+
+.package-modal-content .modal-intro{
+  color:#4f4c46;
+  font-size:16px;
+  max-width:600px;
+  margin-bottom:28px;
+}
+
+.package-features{
+  border-top:1px solid var(--line);
+  margin-top:25px;
+}
+
+.package-feature{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+  font-size:13px;
+}
+
+.package-feature span:last-child{
+  color:var(--muted);
+  text-align:right;
+}
+
+.package-enquire{
+  display:inline-block;
+  margin-top:28px;
+  background:linear-gradient(135deg,#7A5CFF,#0084FF);
+  color:#fff;
+  padding:14px 19px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+  border:none;
+  transition:transform .2s ease,opacity .2s ease;
+}
+
+.package-enquire:hover{
+  transform:translateY(-2px);
+  opacity:.9;
+}
+
+@media(max-width:800px){
+  .package-feature{
+    display:block;
+  }
+
+  .package-feature span:last-child{
+    display:block;
+    text-align:left;
+    margin-top:4px;
+  }
+}
 @media(max-width:800px){
   .brand img{
   width:30px;
@@ -291,9 +365,28 @@ footer .wrap{
 <section class="wrap" id="connect">
 <div class="head"><div><div class="kicker">05 / Beyond the episodes</div><h2 class="title">Want to go deeper? Choose your room.</h2></div><div class="intro">For people who don't just want another answer — they want to unpack the question behind it.</div></div>
 <div class="packages">
-<a class="package" href="#contact"><div>01 →</div><h3>1:1 Interaction</h3><p>A focused conversation to unpack a design, career, product or experience question.</p><div class="arrow">↗</div></a>
-<a class="package dark" href="#contact"><div>02 →</div><h3>Advanced Interaction</h3><p>A deeper session for complex questions, critique, problem framing and experience thinking.</p><div class="arrow">↗</div></a>
-<a class="package" href="#contact"><div>03 →</div><h3>Premium Interaction</h3><p>An intensive, personalised engagement built around a larger challenge or evolving direction.</p><div class="arrow">↗</div></a>
+
+<a class="package" href="javascript:void(0)" onclick="openPackageModal('one')">
+  <div>01 →</div>
+  <h3>1:1 Interaction</h3>
+  <p>Understanding Needs + Audit Report</p>
+  <div class="arrow">↗</div>
+</a>
+
+<a class="package dark" href="javascript:void(0)" onclick="openPackageModal('advanced')">
+  <div>02 →</div>
+  <h3>Advanced Interaction</h3>
+  <p>Understanding Needs + Audit Report + Strategy Creation</p>
+  <div class="arrow">↗</div>
+</a>
+
+<a class="package" href="javascript:void(0)" onclick="openPackageModal('premium')">
+  <div>03 →</div>
+  <h3>Premium Interaction</h3>
+  <p>Advanced Interaction + Project Engagement</p>
+  <div class="arrow">↗</div>
+</a>
+
 </div>
 </section>
 
@@ -361,8 +454,228 @@ footer .wrap{
 </footer>
 
 <div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><div class="kicker">Room to Evolve · Episode 01 · Upcoming</div><h3>Why do some experiences stay with us?</h3><p>Not every memorable experience comes from a beautiful interface. Some stay because of a moment, a decision, a feeling, a context — or because something simply felt effortless.</p><p>Episode 01 opens the conversation around what really makes an experience memorable, and why understanding the human side of design matters before creating another screen.</p><div class="coming"><b>Coming soon.</b><br>Join the room when the first conversation opens.</div></div></div>
+<!-- 1:1 INTERACTION MODAL -->
+<div class="modal" id="packageOneModal">
+  <div class="modalbox package-modal-content">
+    <button class="close" onclick="closePackageModal('packageOneModal')">×</button>
+
+    <div class="package-label">01 / 1:1 Interaction</div>
+
+    <h3>Understand before you change.</h3>
+
+    <p class="modal-intro">
+      A focused 1:1 session to understand what is really happening before
+      deciding what needs to be designed, changed or improved.
+    </p>
+
+    <div class="package-features">
+      <div class="package-feature">
+        <span>Understanding</span>
+        <span>Unpack the problem, context and actual need.</span>
+      </div>
+
+      <div class="package-feature">
+        <span>Audit</span>
+        <span>Review the existing experience, product or design.</span>
+      </div>
+
+      <div class="package-feature">
+        <span>Outcome</span>
+        <span>Clear observations, gaps and areas worth exploring.</span>
+      </div>
+    </div>
+
+    <a
+      class="package-enquire"
+      href="mailto:designthatevolve@gmail.com?subject=Enquiry - 1:1 Interaction"
+    >
+      Enquire about 1:1 →
+    </a>
+  </div>
+</div>
+
+
+<!-- ADVANCED INTERACTION MODAL -->
+<div class="modal" id="packageAdvancedModal">
+  <div class="modalbox package-modal-content">
+    <button class="close" onclick="closePackageModal('packageAdvancedModal')">×</button>
+
+    <div class="package-label">02 / Advanced Interaction</div>
+
+    <h3>Understand it. Then build the strategy.</h3>
+
+    <p class="modal-intro">
+      Everything in 1:1 Interaction, taken further into strategic thinking —
+      helping you move from identifying the problem to deciding the direction.
+    </p>
+
+    <div class="package-features">
+      <div class="package-feature">
+        <span>Everything in 1:1</span>
+        <span>Understanding + Audit.</span>
+      </div>
+
+      <div class="package-feature">
+        <span>Strategy Building</span>
+        <span>Define direction, priorities and opportunities.</span>
+      </div>
+
+      <div class="package-feature">
+        <span>Experience Thinking</span>
+        <span>Connect business goals, people and design decisions.</span>
+      </div>
+
+      <div class="package-feature">
+        <span>Outcome</span>
+        <span>A clearer strategic direction for what comes next.</span>
+      </div>
+    </div>
+
+    <a
+      class="package-enquire"
+      href="mailto:designthatevolve@gmail.com?subject=Enquiry - Advanced Interaction"
+    >
+      Enquire about Advanced →
+    </a>
+  </div>
+</div>
+
+
+<!-- PREMIUM INTERACTION MODAL -->
+<div class="modal" id="packagePremiumModal">
+  <div class="modalbox package-modal-content">
+    <button class="close" onclick="closePackageModal('packagePremiumModal')">×</button>
+
+    <div class="package-label">03 / Premium Interaction</div>
+
+    <h3>Turn the direction into something real.</h3>
+
+    <p class="modal-intro">
+      The deepest level of interaction — combining understanding, audit and
+      strategy with the possibility of moving into an actual project engagement.
+    </p>
+
+    <div class="package-features">
+      <div class="package-feature">
+        <span>Everything in Advanced</span>
+        <span>Understanding + Audit + Strategy.</span>
+      </div>
+
+      <div class="package-feature">
+        <span>Project Direction</span>
+        <span>Translate the strategy into a project opportunity.</span>
+      </div>
+
+      <div class="package-feature">
+        <span>Project Deal</span>
+        <span>Explore a potential project engagement together.</span>
+      </div>
+
+      <div class="package-feature">
+        <span>Outcome</span>
+        <span>A path from conversation to meaningful execution.</span>
+      </div>
+    </div>
+
+    <a
+      class="package-enquire"
+      href="mailto:designthatevolve@gmail.com?subject=Enquiry - Premium Interaction"
+    >
+      Enquire about Premium →
+    </a>
+  </div>
+</div>
 <script>
-const m=document.getElementById("modal");function openModal(){m.classList.add("open");document.body.style.overflow="hidden"}function closeModal(){m.classList.remove("open");document.body.style.overflow=""}m.addEventListener("click",e=>{if(e.target===m)closeModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+
+const m = document.getElementById("modal");
+
+function openModal(){
+  m.classList.add("open");
+  document.body.style.overflow="hidden";
+}
+
+function closeModal(){
+  m.classList.remove("open");
+  document.body.style.overflow="";
+}
+
+m.addEventListener("click",e=>{
+  if(e.target===m) closeModal();
+});
+
+
+/* PACKAGE MODALS */
+
+function openPackageModal(type){
+
+  let modalId;
+
+  if(type === "one"){
+    modalId = "packageOneModal";
+  }
+
+  if(type === "advanced"){
+    modalId = "packageAdvancedModal";
+  }
+
+  if(type === "premium"){
+    modalId = "packagePremiumModal";
+  }
+
+  const packageModal = document.getElementById(modalId);
+
+  if(packageModal){
+    packageModal.classList.add("open");
+    document.body.style.overflow="hidden";
+  }
+}
+
+
+function closePackageModal(modalId){
+
+  const packageModal = document.getElementById(modalId);
+
+  if(packageModal){
+    packageModal.classList.remove("open");
+    document.body.style.overflow="";
+  }
+}
+
+
+/* CLOSE PACKAGE MODALS WHEN CLICKING OUTSIDE */
+
+document.querySelectorAll(".modal").forEach(modal => {
+
+  modal.addEventListener("click", e => {
+
+    if(e.target === modal){
+
+      modal.classList.remove("open");
+      document.body.style.overflow="";
+
+    }
+
+  });
+
+});
+
+
+/* ESCAPE KEY */
+
+document.addEventListener("keydown", e => {
+
+  if(e.key === "Escape"){
+
+    document.querySelectorAll(".modal.open").forEach(modal => {
+      modal.classList.remove("open");
+    });
+
+    document.body.style.overflow="";
+
+  }
+
+});
+
 </script>
 </body>
 </html>
