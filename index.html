@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="/dte_favicon.png?v=3">
 <style>
 :root{--bg:#f4f3ee;--ink:#11110f;--muted:#706d66;--line:#d8d5cc;--card:#fbfaf6;--dark:#171714;--white:#f7f6f1;--acid:#caff3d}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:0.84}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
 nav{
 height:78px;
 border-bottom:1px solid var(--line);
@@ -289,6 +289,10 @@ line-height:1.4;
 }
 .packages{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.package{background:var(--card);border:1px solid var(--line);border-radius:21px;padding:30px;min-height:290px;display:flex;flex-direction:column}.package.dark{background:var(--dark);color:var(--white);border-color:var(--dark)}.package h3{font-size:31px;letter-spacing:-.05em;margin:65px 0 10px}.package p{font-size:13px;color:var(--muted);margin:0}.package.dark p{color:#bbb}.arrow{margin-top:auto;font-size:22px}
 .faq{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px}.faqs{border-top:1px solid var(--ink)}details{border-bottom:1px solid var(--line);padding:19px 0}summary{cursor:pointer;font-size:14px;font-weight:800;list-style:none;display:flex;justify-content:space-between}summary::-webkit-details-marker{display:none}summary:after{content:"+";font-size:20px;font-weight:400}details[open] summary:after{content:"–"}details p{color:var(--muted);font-size:13px;max-width:650px;margin:14px 0 2px}
+/* =========================
+   FINAL / CONTACT SECTION
+   ========================= */
+
 .final{
 background:var(--dark);
 color:var(--white);
@@ -296,61 +300,79 @@ padding:105px 0 70px;
 overflow:hidden;
 }
 
-.final h2{
-font-size:clamp(55px,9vw,115px);
-line-height:.86;
-letter-spacing:-.08em;
+/* Make only this section full width */
+.final .wrap{
+width:100%;
+max-width:none;
 margin:0;
-max-width:950px;
+padding-left:max(20px,calc((100vw - 1180px)/2));
+padding-right:0;
 }
 
-/* Final CTA + footer image */
+/* Left content + right image */
 .final-layout{
 display:grid;
-grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
+grid-template-columns:minmax(0,1fr) minmax(430px,560px);
 align-items:center;
-gap:55px;
+gap:35px;
+width:100%;
 }
 
+/* Left side */
 .final-copy{
 display:flex;
 flex-direction:column;
 align-items:flex-start;
+min-width:0;
 }
 
+/* Footer heading */
 .final h2{
-max-width:700px;
+font-size:clamp(58px,7.2vw,105px);
+line-height:.84;
+letter-spacing:-.075em;
+margin:0;
+max-width:none;
+white-space:nowrap;
 }
 
+/* Description */
 .finalcopy{
 color:#bbb;
 max-width:500px;
 font-size:14px;
-margin:28px 0 0;
+line-height:1.45;
+margin-top:28px;
 }
 
+/* CTA stays below description */
 .footer-cta{
 position:static;
 display:inline-block;
-margin-top:30px;
+margin-top:26px;
 white-space:nowrap;
 }
 
+/* Right image area */
 .footer-image-wrap{
+width:100%;
+height:100%;
 display:flex;
-align-items:center;
-justify-content:center;
+align-items:flex-end;
+justify-content:flex-end;
 min-width:0;
 }
 
+/* Footer image */
 .footer-image{
-width:100%;
-max-width:430px;
-max-height:540px;
-height:auto;
 display:block;
+width:100%;
+max-width:560px;
+height:auto;
+max-height:680px;
 object-fit:contain;
-object-position:center;
+object-position:right bottom;
+margin:0;
 }
 .cta{
 display:inline-block;
@@ -585,45 +607,70 @@ grid-template-columns:1fr;
 gap:14px;
 margin-top:25px;
 }
+/* =========================
+   FINAL SECTION — MOBILE
+   ========================= */
+
 .final{
 padding:80px 0 50px;
 }
 
-.final h2{
-font-size:clamp(48px,14vw,76px);
-line-height:.88;
+/* Full width mobile layout */
+.final .wrap{
+width:100%;
+padding-left:20px;
+padding-right:0;
 }
 
+/* Stack content and image */
 .final-layout{
 grid-template-columns:1fr;
-gap:35px;
+gap:30px;
 }
 
-.final-copy{
-align-items:flex-start;
+/* Heading */
+.final h2{
+font-size:clamp(48px,14vw,76px);
+line-height:.86;
+letter-spacing:-.075em;
+white-space:normal;
+max-width:calc(100vw - 40px);
 }
 
-.footer-image-wrap{
-order:2;
+/* Description */
+.finalcopy{
+margin-top:22px;
+max-width:calc(100vw - 40px);
+font-size:13px;
+line-height:1.45;
 }
 
-.footer-image{
-width:min(78%,360px);
-max-width:360px;
-max-height:430px;
-margin:0 auto;
-}
-
+/* CTA */
 .footer-cta{
-margin-top:25px;
+position:static;
+margin-top:24px;
 padding:13px 16px;
 font-size:12px;
 }
 
-.finalcopy{
-margin-top:22px;
-max-width:100%;
-font-size:13px;
+/* Image */
+.footer-image-wrap{
+order:2;
+width:100%;
+display:flex;
+justify-content:flex-end;
+overflow:hidden;
+}
+
+/* Mobile image */
+.footer-image{
+width:min(90%,380px);
+max-width:380px;
+max-height:480px;
+height:auto;
+margin:0;
+object-fit:contain;
+object-position:right bottom;
 }
   
 /* Actual bottom footer */
@@ -780,44 +827,47 @@ alt="Pragati Aggarwal — Founder of Design That Evolve">
 
 <section class="final" id="contact">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="final-layout">
+    <div class="final-layout">
 
-  <div class="final-copy">
+      <!-- LEFT CONTENT -->
+      <div class="final-copy">
 
-    <h2 class="title">
-      Don't just learn<br>
-      what to design.<br>
-      Understand <i>why.</i>
-    </h2>
+        <h2 class="title">
+          Don't just learn<br>
+          what to design.<br>
+          Understand <i>why.</i>
+        </h2>
 
-    <div class="finalcopy">
-      Room to Evolve is only the beginning.<br>
-      The first question is already waiting.
+        <div class="finalcopy">
+          Room to Evolve is only the beginning.<br>
+          The first question is already waiting.
+        </div>
+
+        <a
+          class="cta footer-cta"
+          href="mailto:designthatevolve@gmail.com?subject=Room to Evolve"
+        >
+          Start the conversation →
+        </a>
+
+      </div>
+
+
+      <!-- RIGHT IMAGE -->
+      <div class="footer-image-wrap">
+
+        <img
+          class="footer-image"
+          src="footer_image1.png"
+          alt="Design That Evolve — Think beyond the screen">
+
+      </div>
+
     </div>
 
-    <a
-      class="cta footer-cta"
-      href="mailto:designthatevolve@gmail.com?subject=Room to Evolve"
-    >
-      Start the conversation →
-    </a>
-
   </div>
-
-  <div class="footer-image-wrap">
-
-    <img
-      class="footer-image"
-      src="footer_image1.png"
-      alt="Design That Evolve — Think beyond the screen">
-
-  </div>
-
-</div>
-
-</div>
 
 </section>
 </main>
