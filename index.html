@@ -131,24 +131,49 @@ z-index:2;
 }
 
 section{padding:100px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;gap:40px;margin-bottom:42px}.title{font-size:clamp(38px,5vw,70px);line-height:.94;letter-spacing:-.065em;margin:12px 0 0;max-width:760px}.intro{max-width:360px;color:var(--muted);font-size:14px}
-.episodes{display:grid;gap:13px}.episode{display:grid;grid-template-columns:100px 1fr auto;:center;gap:25px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:27px}.episode:hover{border-color:#99958b}.epno{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.episode h3{font-size:27px;line-height:1;letter-spacing:-.045em;margin:0 0 8px}.episode p{margin:0;color:var(--muted);font-size:13px}.status{padding:9px 13px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em}.upcoming{background:var(--card);color:var(--ink);border:1px solid var(--ink);}
-.locked{
-background:#ebe9e2;
-color:#8c877e;
-display:inline-flex;
-:center;
-gap:6px;
+.episodes{display:grid;gap:13px}.episode{display:grid;grid-template-columns:100px 1fr auto;:center;gap:25px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:27px}.episode:hover{border-color:#99958b}.epno{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.episode h3{font-size:27px;line-height:1;letter-spacing:-.045em;margin:0 0 8px}.episode p{margin:0;color:var(--muted);font-size:13px}
+/* Episode status badges */
+.status{
+  width:112px;
+  height:82px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+
+  border-radius:999px;
+
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+
+  white-space:nowrap;
+  flex-shrink:0;
+}
+
+/* UPCOMING */
+.status.upcoming{
+  border:1px solid var(--ink);
+  background:transparent;
+  color:var(--ink);
+}
+
+/* LOCKED */
+.status.locked{
+  border:none;
+  background:#e9e7e0;
+  color:var(--muted);
 }
 
 .lock-icon{
-width:12px;
-height:12px;
-fill:none;
-stroke:currentColor;
-stroke-width:1.8;
-stroke-linecap:round;
-stroke-linejoin:round;
-flex-shrink:0;
+  width:14px;
+  height:14px;
+  stroke:currentColor;
+  stroke-width:1.8;
+  fill:none;
+  flex-shrink:0;
 }
 
 .whatsapp-update{
@@ -587,6 +612,14 @@ margin-top:22px;
 
 .episode{grid-template-columns:55px 1fr}
 .episode .status{grid-column:2;justify-self:start}
+.status{
+  width:auto;
+  height:46px;
+  padding:0 18px;
+
+  font-size:9px;
+  letter-spacing:.14em;
+}
 .packages{grid-template-columns:1fr}
 .founder-image{
 width:100%;
