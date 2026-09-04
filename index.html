@@ -65,7 +65,26 @@ nav{
 .hero{padding:160px 0 95px}.eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:800}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#7A5CFF,#0084FF);border:1px solid var(--ink);margin-right:7px}
 h1{font-size:clamp(58px,9vw,126px);line-height:.86;letter-spacing:-.08em;margin:25px 0 50px;max-width:950px}.herofoot{display:grid;grid-template-columns:1.2fr .8fr;gap:50px}.lead{font-size:20px;letter-spacing:-.025em;max-width:650px}.note{border-left:1px solid var(--ink);padding-left:18px;color:var(--muted);font-size:14px;max-width:350px}
 section{padding:100px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;gap:40px;margin-bottom:42px}.title{font-size:clamp(38px,5vw,70px);line-height:.94;letter-spacing:-.065em;margin:12px 0 0;max-width:760px}.intro{max-width:360px;color:var(--muted);font-size:14px}
-.episodes{display:grid;gap:13px}.episode{display:grid;grid-template-columns:100px 1fr auto;align-items:center;gap:25px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:27px}.episode:hover{border-color:#99958b}.epno{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.episode h3{font-size:27px;line-height:1;letter-spacing:-.045em;margin:0 0 8px}.episode p{margin:0;color:var(--muted);font-size:13px}.status{padding:9px 13px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em}.upcoming{background:var(--card);color:var(--ink);border:1px solid var(--ink);}.locked{background:#ebe9e2;color:#8c877e}
+.episodes{display:grid;gap:13px}.episode{display:grid;grid-template-columns:100px 1fr auto;align-items:center;gap:25px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:27px}.episode:hover{border-color:#99958b}.epno{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.episode h3{font-size:27px;line-height:1;letter-spacing:-.045em;margin:0 0 8px}.episode p{margin:0;color:var(--muted);font-size:13px}.status{padding:9px 13px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em}.upcoming{background:var(--card);color:var(--ink);border:1px solid var(--ink);}
+  .locked{
+  background:#ebe9e2;
+  color:#8c877e;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+
+.lock-icon{
+  width:12px;
+  height:12px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  flex-shrink:0;
+}
+
 .whatsapp-update{
   margin-top:18px;
   padding:30px;
@@ -332,9 +351,23 @@ footer .wrap{
 <section class="wrap" id="room">
 <div class="head"><div><div class="kicker">01 / Room to Evolve</div><h2 class="title">The first conversation starts with a question.</h2></div><div class="intro">A discussion series about the psychology, decisions and real-world conditions behind experiences — not just the screens they produce.</div></div>
 <div class="episodes">
-<article class="episode"><div class="epno">Episode 01</div><button onclick="openModal()" style="border:0;background:none;text-align:left;cursor:pointer"><h3>Why do some experiences stay with us?</h3><p><b>Beyond the Screen.</b> - The first Room to Evolve conversation about on what makes an experience meaningful - and why some stay with us ong after the screen is gone.</p></button><span class="status upcoming">Upcoming</span></article>
-<article class="episode"><div class="epno">Episode 02</div><div><h3>Who designed your decision?</h3><p><b>You think you choose. But do you?</b> - A conversation about the psychology behind choice,the invisible influences in design and where persuasion begins.</p></div><span class="status locked">Locked</span></article>
-<article class="episode"><div class="epno">Episode 03</div><div><h3>Can we really judge an Experience Instantly?</h3><p><b>The 3-Second Lie.</b> - A conversation about first impressions,attention,cognitive biases and the obsession with speed in a world designed to distract us.</p></div><span class="status locked">Locked</span></article>
+<article class="episode"><div class="epno">Episode 01</div><button onclick="openModal()" style="border:0;background:none;text-align:left;cursor:pointer"><h3>Why do some experiences stay with us?</h3><p><b>Beyond the Screen.</b> - The first Room to Evolve conversation about on what makes an experience meaningful - and why some stay with us long after the screen is gone.</p></button>
+  <span class="status upcoming">Upcoming</span></article>
+<article class="episode"><div class="epno">Episode 02</div><div><h3>Who designed your decision?</h3><p><b>You think you choose. But do you?</b> - A conversation about the psychology behind choice,the invisible influences in design and where persuasion begins.</p></div><span class="status locked">
+    <svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="5" y="10" width="14" height="11" rx="2"></rect>
+      <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+    </svg>
+    Locked
+  </span></article>
+<article class="episode"><div class="epno">Episode 03</div><div><h3>Can we really judge an Experience Instantly?</h3><p><b>The 3-Second Lie.</b> - A conversation about first impressions,attention,cognitive biases and the obsession with speed in a world designed to distract us.</p></div>
+  <span class="status locked">
+    <svg class="lock-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="5" y="10" width="14" height="11" rx="2"></rect>
+      <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+    </svg>
+    Locked
+  </span></article>
 </div>
 <div class="whatsapp-update">
   <div>
@@ -371,7 +404,7 @@ footer .wrap{
 </section>
 
 <section class="wrap" id="founder">
-<div class="head"><div><div class="kicker">04 / Founder</div><h2 class="title">The person behind the questions.</h2></div><div class="intro">A designer building the space she felt was missing.</div></div>
+<div class="head"><div><div class="kicker">04 / Founder's Desk</div><h2 class="title">The person behind the questions.</h2></div><div class="intro">A designer building the space she felt was missing.</div></div>
 <div class="founder">
 <div class="founderbox"><div class="label">Design That Evolve · Founder</div><div class="foundername">Pragati<br>Aggarwal.</div><div class="founderrole">Designer · Experience thinker · Curious about the gap between what businesses ask for and what people actually experience.</div></div>
 <div class="story"><h2>There was a gap I couldn't ignore.</h2><p>Working with the industry for years — with startups and private limited companies across multiple project domains — I kept seeing the same disconnect: the client requirement says one thing, the designer delivery becomes another, and somewhere between them the actual experience gets lost.</p><p>So I started Design That Evolve to create the space I felt was missing: a platform where we can discuss the <b>why</b> before rushing towards the <b>what</b>.</p><p>It is not built only for beginners. It is for anyone curious enough to question the obvious — and ambitious enough to stand out because they understand the experience, not just the output.</p>
