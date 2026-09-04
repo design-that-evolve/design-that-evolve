@@ -304,43 +304,53 @@ margin:0;
 max-width:950px;
 }
 
-/* Footer visual stage */
-.footer-visual{
-position:relative;
-width:100%;
-max-width:800px;
-margin:35px auto 0;
+/* Final CTA + footer image */
+.final-layout{
+display:grid;
+grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
+align-items:center;
+gap:55px;
 }
 
-/* Hat + blazer image */
-.footer-image{
-width:100%;
-height:auto;
-display:block;
-object-fit:contain;
+.final-copy{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
 }
 
-/* CTA positioned inside the gap */
+.final h2{
+max-width:700px;
+}
+
+.finalcopy{
+color:#bbb;
+max-width:500px;
+font-size:14px;
+margin:28px 0 0;
+}
+
 .footer-cta{
-position:absolute;
-left:50%;
-top:32%;
-transform:translate(-50%,-50%);
-z-index:2;
+position:static;
+display:inline-block;
+margin-top:30px;
 white-space:nowrap;
 }
 
-/* CTA hover should preserve its centered position */
-.footer-cta:hover{
-transform:translate(-50%,-50%) translateY(-2px);
+.footer-image-wrap{
+display:flex;
+align-items:center;
+justify-content:center;
+min-width:0;
 }
 
-/* Supporting line */
-.finalcopy{
-color:#bbb;
+.footer-image{
+width:100%;
 max-width:430px;
-font-size:14px;
-margin-top:5px;
+max-height:540px;
+height:auto;
+display:block;
+object-fit:contain;
+object-position:center;
 }
 .cta{
 display:inline-block;
@@ -584,33 +594,38 @@ font-size:clamp(48px,14vw,76px);
 line-height:.88;
 }
 
-.footer-visual{
-width:100%;
-max-width:520px;
-margin:25px auto 0;
+.final-layout{
+grid-template-columns:1fr;
+gap:35px;
+}
+
+.final-copy{
+align-items:flex-start;
+}
+
+.footer-image-wrap{
+order:2;
 }
 
 .footer-image{
-width:100%;
-height:auto;
+width:min(78%,360px);
+max-width:360px;
+max-height:430px;
+margin:0 auto;
 }
 
 .footer-cta{
-top:32%;
-left:50%;
+margin-top:25px;
 padding:13px 16px;
 font-size:12px;
 }
 
-.footer-cta:hover{
-transform:translate(-50%,-50%);
-}
-
 .finalcopy{
-margin-top:5px;
+margin-top:22px;
 max-width:100%;
 font-size:13px;
 }
+  
 /* Actual bottom footer */
 footer .wrap{
 display:block;
@@ -767,31 +782,39 @@ alt="Pragati Aggarwal — Founder of Design That Evolve">
 
 <div class="wrap">
 
-<h2 class="title">
-  Don't just learn<br>
-  what to design.<br>
-  Understand <i>why.</i>
-</h2>
+<div class="final-layout">
 
-<div class="footer-visual">
+  <div class="final-copy">
 
-  <img
-    class="footer-image"
-    src="footer_image.png"
-    alt="Design That Evolve — Think beyond the screen">
+    <h2 class="title">
+      Don't just learn<br>
+      what to design.<br>
+      Understand <i>why.</i>
+    </h2>
 
-  <a
-    class="cta footer-cta"
-    href="mailto:designthatevolve@gmail.com?subject=Room to Evolve"
-  >
-    Start the conversation →
-  </a>
+    <div class="finalcopy">
+      Room to Evolve is only the beginning.<br>
+      The first question is already waiting.
+    </div>
 
-</div>
+    <a
+      class="cta footer-cta"
+      href="mailto:designthatevolve@gmail.com?subject=Room to Evolve"
+    >
+      Start the conversation →
+    </a>
 
-<div class="finalcopy">
-  Room to Evolve is only the beginning.
-  The first question is already waiting.
+  </div>
+
+  <div class="footer-image-wrap">
+
+    <img
+      class="footer-image"
+      src="footer_image1.png"
+      alt="Design That Evolve — Think beyond the screen">
+
+  </div>
+
 </div>
 
 </div>
