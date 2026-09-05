@@ -133,36 +133,36 @@ z-index:2;
 section{padding:100px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;gap:40px;margin-bottom:42px}.title{font-size:clamp(38px,5vw,70px);line-height:.94;letter-spacing:-.065em;margin:12px 0 0;max-width:760px}.intro{max-width:360px;color:var(--muted);font-size:14px}
 .episodes{display:grid;gap:13px}.episode{display:grid;grid-template-columns:100px 1fr auto;:center;gap:25px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:27px}.episode:hover{border-color:#99958b}.epno{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.episode h3{font-size:27px;line-height:1;letter-spacing:-.045em;margin:0 0 8px}.episode p{margin:0;color:var(--muted);font-size:13px}
 /* Episode status badges */
+/* Episode status labels */
 .status{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:6px;
+  align-self:center;
 
-  padding:14px 18px;
-
+  padding:10px 16px;
   border-radius:999px;
 
   font-size:10px;
   font-weight:800;
-  letter-spacing:.09em;
-  text-transform:uppercase;
-
   line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+
   white-space:nowrap;
   flex-shrink:0;
 }
+
 .status.upcoming{
   background:var(--card);
   color:var(--ink);
   border:1px solid var(--ink);
 }
 
-  /* LOCKED */
 .status.locked{
   background:#ebe9e2;
   color:#8c877e;
-  border:none;
+  gap:6px;
 }
 
 .lock-icon{
@@ -610,8 +610,15 @@ display:block;
 margin-top:22px;
 }
 
-.episode{grid-template-columns:55px 1fr}
-.episode .status{grid-column:2;justify-self:start}
+.episode{
+  grid-template-columns:55px 1fr;
+}
+
+.episode .status{
+  grid-column:2;
+  justify-self:start;
+  align-self:center;
+}
 .packages{grid-template-columns:1fr}
 .founder-image{
 width:100%;
