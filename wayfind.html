@@ -1,0 +1,2254 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>WAYFIND — Design That Evolve</title>
+
+<link rel="icon" type="image/png" href="dte_favicon.png">
+
+<style>
+
+:root{
+  --bg:#f4f3ee;
+  --ink:#11110f;
+  --muted:#706d66;
+  --line:#d8d5cc;
+  --card:#fbfaf6;
+  --dark:#171714;
+  --white:#f7f6f1;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.25;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.wrap{
+  width:min(1180px,calc(100% - 40px));
+  margin:auto;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav{
+  height:78px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(244,243,238,.92);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  padding:0 max(20px,calc((100vw - 1180px)/2));
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  font-weight:800;
+  letter-spacing:-.05em;
+}
+
+.brand img{
+  width:36px;
+  height:36px;
+  object-fit:contain;
+}
+
+.brand span b{
+  font-weight:400;
+}
+
+.links{
+  display:flex;
+  gap:25px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.links a:hover{
+  color:var(--ink);
+}
+
+.navbtn{
+  background:linear-gradient(135deg,#7A5CFF,#0084FF);
+  color:#fff;
+  padding:10px 15px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* =========================
+   GENERAL
+   ========================= */
+
+main{
+  padding-top:78px;
+}
+
+section{
+  padding:110px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.kicker{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:800;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.dot{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#7A5CFF,#0084FF);
+  border:1px solid var(--ink);
+  margin-right:4px;
+}
+
+.title{
+  font-size:clamp(40px,5vw,72px);
+  line-height:.94;
+  letter-spacing:-.065em;
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero{
+  padding:95px 0 70px;
+}
+
+.hero h1{
+  font-size:clamp(58px,9vw,125px);
+  line-height:.86;
+  letter-spacing:-.08em;
+  max-width:1050px;
+  margin:28px 0 45px;
+}
+
+.hero-intro{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:60px;
+  align-items:end;
+}
+
+.hero-copy{
+  font-size:20px;
+  letter-spacing:-.025em;
+  max-width:700px;
+}
+
+.hero-meta{
+  border-left:1px solid var(--ink);
+  padding-left:20px;
+  color:var(--muted);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.hero-image{
+  margin-top:65px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  overflow:hidden;
+  background:#e7e5de;
+}
+
+.hero-image img{
+  width:100%;
+  display:block;
+}
+
+/* =========================
+   BIG STATEMENT
+   ========================= */
+
+.statement{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:start;
+}
+
+.statement h2{
+  font-size:clamp(48px,6vw,86px);
+  line-height:.9;
+  letter-spacing:-.075em;
+  margin:0;
+}
+
+.statement-copy{
+  color:var(--muted);
+  font-size:15px;
+  max-width:520px;
+}
+
+.statement-copy p{
+  margin-top:0;
+  margin-bottom:20px;
+}
+
+.big-question{
+  margin-top:70px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:35px 0;
+  font-size:clamp(35px,5vw,65px);
+  line-height:.95;
+  letter-spacing:-.065em;
+}
+
+/* =========================
+   OBSERVATION
+   ========================= */
+
+.observation{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:70px;
+}
+
+.observation h2{
+  margin:0;
+  font-size:clamp(45px,6vw,80px);
+  line-height:.9;
+  letter-spacing:-.07em;
+}
+
+.intent-flow{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+.flow-item{
+  padding:25px 0;
+  border-top:1px solid var(--line);
+}
+
+.flow-item:last-child{
+  border-bottom:1px solid var(--line);
+}
+
+.flow-number{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+
+.flow-title{
+  font-size:30px;
+  line-height:1;
+  letter-spacing:-.05em;
+  margin-top:8px;
+}
+
+.flow-arrow{
+  font-size:25px;
+  color:var(--muted);
+  padding:5px 0;
+}
+
+/* =========================
+   IMAGE BLOCK
+   ========================= */
+
+.image-block{
+  margin-top:60px;
+  border:1px solid var(--line);
+  border-radius:25px;
+  overflow:hidden;
+  background:var(--card);
+}
+
+.image-block img{
+  width:100%;
+  display:block;
+}
+
+.image-caption{
+  padding:18px 22px;
+  color:var(--muted);
+  font-size:12px;
+  border-top:1px solid var(--line);
+}
+
+/* =========================
+   MVP
+   ========================= */
+
+.mvp-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.mvp{
+  min-height:390px;
+  padding:40px;
+  border:1px solid var(--line);
+  border-radius:25px;
+  background:var(--card);
+  display:flex;
+  flex-direction:column;
+}
+
+.mvp.dark{
+  background:var(--dark);
+  color:var(--white);
+  border-color:var(--dark);
+}
+
+.mvp-number{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+
+.mvp.dark .mvp-number{
+  color:#999;
+}
+
+.mvp h3{
+  font-size:clamp(42px,5vw,70px);
+  line-height:.88;
+  letter-spacing:-.07em;
+  margin:auto 0 15px;
+}
+
+.mvp p{
+  color:var(--muted);
+  max-width:500px;
+  font-size:14px;
+}
+
+.mvp.dark p{
+  color:#bbb;
+}
+
+/* =========================
+   UX FLOW
+   ========================= */
+
+.ux-flow{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--line);
+  border-radius:25px;
+  overflow:hidden;
+  background:var(--card);
+}
+
+.ux-step{
+  padding:30px;
+  min-height:220px;
+  border-right:1px solid var(--line);
+}
+
+.ux-step:last-child{
+  border-right:none;
+}
+
+.ux-step small{
+  color:var(--muted);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+
+.ux-step h3{
+  font-size:28px;
+  line-height:.95;
+  letter-spacing:-.05em;
+  margin-top:65px;
+}
+
+/* =========================
+   REAL WORLD
+   ========================= */
+
+.real-world{
+  background:var(--dark);
+  color:var(--white);
+}
+
+.real-world .kicker{
+  color:#999;
+}
+
+.real-world-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+}
+
+.real-world h2{
+  font-size:clamp(48px,6vw,82px);
+  line-height:.88;
+  letter-spacing:-.07em;
+  margin:15px 0 0;
+}
+
+.real-world-copy{
+  color:#bbb;
+  font-size:15px;
+  max-width:520px;
+}
+
+.conditions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  margin-top:60px;
+  border-top:1px solid #34332f;
+}
+
+.condition{
+  padding:25px 0;
+  border-bottom:1px solid #34332f;
+  color:#ddd;
+  font-size:14px;
+}
+
+/* =========================
+   OFFLINE
+   ========================= */
+
+.offline{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.offline-panel{
+  padding:40px;
+  border-radius:25px;
+  background:var(--card);
+  border:1px solid var(--line);
+}
+
+.offline-panel.dark{
+  background:var(--dark);
+  color:var(--white);
+  border-color:var(--dark);
+}
+
+.offline-panel h3{
+  font-size:32px;
+  letter-spacing:-.05em;
+  margin:50px 0 20px;
+}
+
+.offline-panel ul{
+  padding-left:18px;
+  color:var(--muted);
+}
+
+.offline-panel.dark ul{
+  color:#bbb;
+}
+
+.offline-note{
+  margin-top:40px;
+  padding:25px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  font-size:clamp(30px,4vw,52px);
+  line-height:.95;
+  letter-spacing:-.06em;
+}
+
+/* =========================
+   CONVERT
+   ========================= */
+
+.convert{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:70px;
+  align-items:center;
+}
+
+.convert h2{
+  font-size:clamp(45px,6vw,80px);
+  line-height:.9;
+  letter-spacing:-.07em;
+  margin:0;
+}
+
+.convert-copy{
+  color:var(--muted);
+  font-size:15px;
+}
+
+.currency{
+  margin-top:40px;
+  border:1px solid var(--line);
+  border-radius:25px;
+  padding:45px;
+  background:var(--card);
+}
+
+.currency-label{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+
+.currency-value{
+  font-size:clamp(65px,9vw,120px);
+  line-height:.85;
+  letter-spacing:-.08em;
+  margin:25px 0;
+}
+
+.currency-result{
+  font-size:25px;
+  letter-spacing:-.04em;
+}
+
+/* =========================
+   DESIGN SYSTEM
+   ========================= */
+
+.system{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+}
+
+.system h2{
+  font-size:clamp(45px,6vw,80px);
+  line-height:.9;
+  letter-spacing:-.07em;
+  margin:0;
+}
+
+.system-copy{
+  color:var(--muted);
+  font-size:15px;
+}
+
+.system-image{
+  grid-column:1 / -1;
+  margin-top:30px;
+}
+
+/* =========================
+   PROTOTYPE
+   ========================= */
+
+.prototype{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.prototype-card{
+  border:1px solid var(--line);
+  border-radius:25px;
+  overflow:hidden;
+  background:var(--card);
+}
+
+.prototype-card img{
+  width:100%;
+  display:block;
+  aspect-ratio:4 / 5;
+  object-fit:cover;
+}
+
+.prototype-label{
+  padding:20px;
+}
+
+.prototype-label small{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+
+.prototype-label h3{
+  font-size:25px;
+  margin:8px 0 0;
+  letter-spacing:-.045em;
+}
+
+/* =========================
+   SCOPE
+   ========================= */
+
+.scope{
+  background:var(--dark);
+  color:var(--white);
+}
+
+.scope h2{
+  font-size:clamp(50px,7vw,100px);
+  line-height:.86;
+  letter-spacing:-.075em;
+  max-width:900px;
+  margin:20px 0;
+}
+
+.scope p{
+  color:#bbb;
+  max-width:620px;
+}
+
+.scope-grid{
+  margin-top:65px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid #34332f;
+}
+
+.scope-item{
+  padding:22px 0;
+  border-bottom:1px solid #34332f;
+  color:#ddd;
+  font-size:14px;
+}
+
+.scope-question{
+  margin-top:60px;
+  font-size:clamp(30px,4vw,55px);
+  line-height:.95;
+  letter-spacing:-.06em;
+}
+
+/* =========================
+   NEXT
+   ========================= */
+
+.next{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+}
+
+.next h2{
+  font-size:clamp(45px,6vw,80px);
+  line-height:.9;
+  letter-spacing:-.07em;
+  margin:0;
+}
+
+.next-copy{
+  color:var(--muted);
+}
+
+.roadmap{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  margin-top:40px;
+  border-top:1px solid var(--line);
+}
+
+.roadmap-item{
+  padding:25px 15px 25px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.roadmap-item:not(:last-child){
+  border-right:1px solid var(--line);
+  padding-right:20px;
+}
+
+.roadmap-number{
+  font-size:10px;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.roadmap-item h3{
+  font-size:20px;
+  letter-spacing:-.04em;
+}
+
+/* =========================
+   REFLECTION
+   ========================= */
+
+.reflection{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+}
+
+.reflection h2{
+  font-size:clamp(45px,6vw,80px);
+  line-height:.9;
+  letter-spacing:-.07em;
+  margin:0;
+}
+
+.insights{
+  border-top:1px solid var(--line);
+}
+
+.insight{
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.insight strong{
+  display:block;
+  font-size:16px;
+  margin-bottom:6px;
+}
+
+.insight span{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* =========================
+   FINAL
+   ========================= */
+
+.final{
+  background:var(--dark);
+  color:var(--white);
+  text-align:left;
+}
+
+.final h2{
+  font-size:clamp(50px,7vw,100px);
+  line-height:.86;
+  letter-spacing:-.075em;
+  max-width:1000px;
+  margin:0;
+}
+
+.final p{
+  color:#bbb;
+  max-width:580px;
+  margin:30px 0 0;
+  font-size:14px;
+}
+
+.cta{
+  display:inline-block;
+  margin-top:28px;
+  background:linear-gradient(135deg,#7A5CFF,#0084FF);
+  color:#fff;
+  padding:15px 19px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:13px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+  background:var(--dark);
+  color:#999;
+  border-top:1px solid #34332f;
+  padding:22px 0;
+  font-size:11px;
+}
+
+footer .wrap{
+  display:flex;
+  justify-content:space-between;
+  gap:25px;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:800px){
+
+  .links{
+    display:none;
+  }
+
+  .brand img{
+    width:30px;
+    height:30px;
+  }
+
+  section{
+    padding:80px 0;
+  }
+
+  .hero{
+    padding:75px 0 50px;
+  }
+
+  .hero h1{
+    font-size:clamp(55px,16vw,88px);
+  }
+
+  .hero-intro,
+  .statement,
+  .observation,
+  .real-world-grid,
+  .offline,
+  .convert,
+  .system,
+  .next,
+  .reflection{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .mvp-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ux-flow{
+    grid-template-columns:1fr;
+  }
+
+  .ux-step{
+    border-right:none;
+    border-bottom:1px solid var(--line);
+    min-height:160px;
+  }
+
+  .ux-step:last-child{
+    border-bottom:none;
+  }
+
+  .ux-step h3{
+    margin-top:35px;
+  }
+
+  .conditions{
+    grid-template-columns:1fr;
+  }
+
+  .prototype{
+    grid-template-columns:1fr;
+  }
+
+  .scope-grid{
+    grid-template-columns:1fr;
+  }
+
+  .roadmap{
+    grid-template-columns:1fr;
+  }
+
+  .roadmap-item:not(:last-child){
+    border-right:none;
+  }
+
+  .roadmap-item{
+    border-bottom:1px solid var(--line);
+  }
+
+  footer .wrap{
+    display:block;
+  }
+
+  .footer-tagline{
+    margin-top:15px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<a class="brand" href="index.html">
+
+<img
+src="dte_Logo.png"
+alt="Design That Evolve logo"
+>
+
+<span>
+Design that <b>Evolve</b>
+</span>
+
+</a>
+
+<div class="links">
+
+<a href="index.html#room">
+Room to Evolve
+</a>
+
+<a href="projects.html">
+Projects
+</a>
+
+<a href="index.html#founder">
+Founder
+</a>
+
+<a href="index.html#connect">
+Connect
+</a>
+
+<a href="index.html#faq">
+FAQ
+</a>
+
+</div>
+
+<a class="navbtn" href="index.html#room">
+Enter the Room →
+</a>
+
+</nav>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+     ========================= -->
+
+<section class="hero">
+
+<div class="wrap">
+
+<div class="eyebrow">
+<span class="dot"></span>
+01 / Product Exploration
+</div>
+
+<h1>
+What if you could
+communicate without
+speaking the same
+language?
+</h1>
+
+<div class="hero-intro">
+
+<div class="hero-copy">
+
+WAYFIND is an independent product exploration into how
+visual communication could help travelers express simple
+needs, understand responses and navigate unfamiliar
+moments without depending entirely on language.
+
+</div>
+
+<div class="hero-meta">
+
+UX / UI<br><br>
+PRODUCT THINKING<br><br>
+FUNCTIONAL PROTOTYPE<br><br>
+2026
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img
+src="wayfind/wayfind-hero.png"
+alt="WAYFIND product exploration"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     THE QUESTION
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="statement">
+
+<div>
+
+<div class="kicker">
+02 / The Question
+</div>
+
+<h2>
+You know what you need.
+<br><br>
+You just don't know how to ask.
+</h2>
+
+</div>
+
+<div class="statement-copy">
+
+<p>
+Travel doesn't always become difficult because the
+information is complicated.
+</p>
+
+<p>
+Sometimes the problem is much smaller.
+</p>
+
+<p>
+You know where you need to go.
+You know what you need.
+You just don't share the language of the person
+in front of you.
+</p>
+
+</div>
+
+</div>
+
+<div class="big-question">
+
+Maybe the problem isn't translation.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     OBSERVATION
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="observation">
+
+<div>
+
+<div class="kicker">
+03 / What We Noticed
+</div>
+
+<h2>
+Intent can be understood without translating everything.
+</h2>
+
+</div>
+
+<div>
+
+<div class="statement-copy">
+
+<p>
+A traveler doesn't necessarily need to translate an
+entire conversation.
+</p>
+
+<p>
+Sometimes they only need to communicate one simple
+intention.
+</p>
+
+</div>
+
+<div class="intent-flow">
+
+<div class="flow-item">
+
+<div class="flow-number">
+01
+</div>
+
+<div class="flow-title">
+Where?
+</div>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">
+02
+</div>
+
+<div class="flow-title">
+How much?
+</div>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">
+03
+</div>
+
+<div class="flow-title">
+Which one?
+</div>
+
+</div>
+
+<div class="flow-item">
+
+<div class="flow-number">
+04
+</div>
+
+<div class="flow-title">
+Can you help?
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DESIGN QUESTION
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="kicker">
+04 / The Question Behind the Product
+</div>
+
+<h2 class="title">
+Can visual language become a bridge between two people?
+</h2>
+
+<div class="statement-copy" style="margin-top:30px">
+
+Instead of designing another translation-heavy travel
+application, WAYFIND explores whether common travel
+intentions can be communicated through a simple visual
+language.
+
+</div>
+
+<div class="image-block">
+
+<img
+src="wayfind/wayfind-icons.png"
+alt="WAYFIND visual language exploration"
+>
+
+<div class="image-caption">
+Early visual language exploration — designing for recognition
+before relying on language.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MVP
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="head">
+
+<div>
+
+<div class="kicker">
+05 / What We Chose to Build
+</div>
+
+<h2 class="title">
+Two things.<br>
+Not everything.
+</h2>
+
+</div>
+
+<div class="intro">
+The first version deliberately focuses on two
+small moments of travel friction.
+</div>
+
+</div>
+
+
+<div class="mvp-grid">
+
+<div class="mvp">
+
+<div class="mvp-number">
+01 / Communicate
+</div>
+
+<h3>
+COMMUNICATE
+</h3>
+
+<p>
+Express a simple intention using visual prompts
+designed to be shown directly to another person.
+</p>
+
+</div>
+
+
+<div class="mvp dark">
+
+<div class="mvp-number">
+02 / Convert
+</div>
+
+<h3>
+CONVERT
+</h3>
+
+<p>
+Quickly understand foreign prices in your own
+currency without turning the experience into
+a finance application.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CORE UX
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="head">
+
+<div>
+
+<div class="kicker">
+06 / The Core Experience
+</div>
+
+<h2 class="title">
+Start with intent.<br>
+Not language.
+</h2>
+
+</div>
+
+<div class="intro">
+The communication flow is designed as a small
+loop between two people.
+</div>
+
+</div>
+
+
+<div class="ux-flow">
+
+<div class="ux-step">
+
+<small>
+01 / Intent
+</small>
+
+<h3>
+Choose
+</h3>
+
+</div>
+
+<div class="ux-step">
+
+<small>
+02 / Create
+</small>
+
+<h3>
+Ask
+</h3>
+
+</div>
+
+<div class="ux-step">
+
+<small>
+03 / Show
+</small>
+
+<h3>
+Show
+</h3>
+
+</div>
+
+<div class="ux-step">
+
+<small>
+04 / Understand
+</small>
+
+<h3>
+Respond
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="image-block">
+
+<img
+src="wayfind/wayfind-flow.png"
+alt="WAYFIND communication flow"
+>
+
+<div class="image-caption">
+Ask → Show → Respond → Understand
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     COMMUNICATION
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="kicker">
+07 / Communication
+</div>
+
+<h2 class="title">
+Start with what you need.
+</h2>
+
+<div class="statement-copy" style="margin-top:30px">
+
+WAYFIND doesn't begin by asking which language
+someone speaks.
+
+It begins with:
+
+<strong>What are you trying to do?</strong>
+
+</div>
+
+<div class="image-block">
+
+<img
+src="wayfind/wayfind-categories.png"
+alt="WAYFIND communication categories"
+>
+
+<div class="image-caption">
+Intent-first navigation — transport, food, directions,
+payment, essentials and help.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SHOW
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="observation">
+
+<div>
+
+<div class="kicker">
+08 / Show
+</div>
+
+<h2>
+Turn an intention into something you can show.
+</h2>
+
+</div>
+
+<div class="statement-copy">
+
+<p>
+Select the situation.
+</p>
+
+<p>
+Select the intention.
+</p>
+
+<p>
+WAYFIND turns it into a simple visual question
+that can be shown directly to another person.
+</p>
+
+<p>
+<strong>
+The phone becomes the conversation starter.
+</strong>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="image-block">
+
+<img
+src="wayfind/wayfind-show.png"
+alt="WAYFIND show mode"
+>
+
+<div class="image-caption">
+Show Mode — the screen becomes the communication object.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RESPONSE
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="kicker">
+09 / The Other Side
+</div>
+
+<h2 class="title">
+Asking isn't enough.
+</h2>
+
+<div class="statement-copy" style="margin-top:30px">
+
+A question only works when the other person can
+respond — and the traveler can understand what
+that response means.
+
+</div>
+
+<div class="image-block">
+
+<img
+src="wayfind/wayfind-response.png"
+alt="WAYFIND response and understanding flow"
+>
+
+<div class="image-caption">
+Show → Respond → Understand
+</div>
+
+</div>
+
+<div class="big-question">
+
+The goal isn't to translate every conversation.
+<br><br>
+The goal is to understand what to do next.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     REAL WORLD
+     ========================= -->
+
+<section class="real-world">
+
+<div class="wrap">
+
+<div class="real-world-grid">
+
+<div>
+
+<div class="kicker">
+10 / Beyond the Screen
+</div>
+
+<h2>
+The screen isn't being used at a desk.
+</h2>
+
+</div>
+
+<div class="real-world-copy">
+
+It might be used while walking through a crowded
+station.
+
+Under bright sunlight.
+
+With one hand.
+
+While the traveler is already trying to communicate
+with someone.
+
+The interface therefore needs to be understood quickly —
+not studied.
+
+</div>
+
+</div>
+
+
+<div class="conditions">
+
+<div class="condition">
+01 — One hand
+</div>
+
+<div class="condition">
+02 — Bright environments
+</div>
+
+<div class="condition">
+03 — Crowded spaces
+</div>
+
+<div class="condition">
+04 — Unfamiliar users
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     OFFLINE
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="head">
+
+<div>
+
+<div class="kicker">
+11 / What We Questioned
+</div>
+
+<h2 class="title">
+What happens when there is no internet?
+</h2>
+
+</div>
+
+<div class="intro">
+The core communication experience should not
+depend entirely on connectivity.
+</div>
+
+</div>
+
+
+<div class="offline">
+
+<div class="offline-panel">
+
+<div class="kicker">
+Core / Offline
+</div>
+
+<h3>
+Available locally.
+</h3>
+
+<ul>
+
+<li>Communication categories</li>
+<li>Visual questions</li>
+<li>Icon system</li>
+<li>Predefined response patterns</li>
+
+</ul>
+
+</div>
+
+
+<div class="offline-panel dark">
+
+<div class="kicker">
+Future / Connected
+</div>
+
+<h3>
+Needs connectivity.
+</h3>
+
+<ul>
+
+<li>Live translation</li>
+<li>GPS</li>
+<li>Dynamic itinerary</li>
+<li>Device-to-device communication</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="offline-note">
+
+The core communication prototype is designed
+around locally available content.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CURRENCY
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="convert">
+
+<div>
+
+<div class="kicker">
+12 / Another Small Friction
+</div>
+
+<h2>
+Language isn't the only thing that changes when you travel.
+</h2>
+
+</div>
+
+<div>
+
+<div class="convert-copy">
+
+Numbers do too.
+
+WAYFIND keeps currency conversion deliberately
+simple.
+
+No expense management.
+
+No financial dashboard.
+
+Just:
+
+<strong>
+“What does this price mean to me?”
+</strong>
+
+</div>
+
+
+<div class="currency">
+
+<div class="currency-label">
+Foreign price
+</div>
+
+<div class="currency-value">
+€38
+</div>
+
+<div class="currency-result">
+≈ ₹3,849
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DESIGN SYSTEM
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="system">
+
+<div>
+
+<div class="kicker">
+13 / The System
+</div>
+
+<h2>
+Designed to be understood before it is read.
+</h2>
+
+</div>
+
+<div class="system-copy">
+
+The visual system stays light, high-contrast and
+intentionally restrained so the interface doesn't
+compete with the communication itself.
+
+</div>
+
+<div class="image-block system-image">
+
+<img
+src="wayfind/wayfind-system.png"
+alt="WAYFIND design system"
+>
+
+<div class="image-caption">
+Typography · Iconography · Components · Communication states
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROTOTYPE
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="head">
+
+<div>
+
+<div class="kicker">
+14 / From Thinking to Making
+</div>
+
+<h2 class="title">
+An idea becomes more useful when you can put it in someone's hands.
+</h2>
+
+</div>
+
+<div class="intro">
+The project moves from UX thinking into a
+functional product prototype.
+</div>
+
+</div>
+
+
+<div class="prototype">
+
+<div class="prototype-card">
+
+<img
+src="wayfind/wayfind-figma.png"
+alt="WAYFIND Figma prototype"
+>
+
+<div class="prototype-label">
+
+<small>
+01 / Think
+</small>
+
+<h3>
+Figma / UX Flow
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="prototype-card">
+
+<img
+src="wayfind/wayfind-ui.png"
+alt="WAYFIND high fidelity interface"
+>
+
+<div class="prototype-label">
+
+<small>
+02 / Design
+</small>
+
+<h3>
+High-Fidelity UI
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="prototype-card">
+
+<img
+src="wayfind/wayfind-android.png"
+alt="WAYFIND Android prototype"
+>
+
+<div class="prototype-label">
+
+<small>
+03 / Test
+</small>
+
+<h3>
+Android Prototype
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SCOPE
+     ========================= -->
+
+<section class="scope">
+
+<div class="wrap">
+
+<div class="kicker">
+15 / Scope
+</div>
+
+<h2>
+Not everything needs to be built.
+</h2>
+
+<p>
+WAYFIND could eventually become much larger.
+
+But adding features doesn't automatically create
+a better experience.
+
+The first version exists to test one question well.
+</p>
+
+
+<div class="scope-grid">
+
+<div class="scope-item">
+GPS
+</div>
+
+<div class="scope-item">
+Live itinerary
+</div>
+
+<div class="scope-item">
+Expense tracking
+</div>
+
+<div class="scope-item">
+AI translation
+</div>
+
+<div class="scope-item">
+Full speech translation
+</div>
+
+<div class="scope-item">
+Device-to-device communication
+</div>
+
+</div>
+
+
+<div class="scope-question">
+
+Can two people communicate an intent
+without sharing a language?
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FUTURE
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="next">
+
+<div>
+
+<div class="kicker">
+16 / Where Could This Question Go Next?
+</div>
+
+<h2>
+The prototype is only the beginning.
+</h2>
+
+</div>
+
+<div class="next-copy">
+
+The future direction isn't about adding everything
+at once.
+
+It is about discovering which parts of the
+communication problem are worth solving next.
+
+</div>
+
+
+<div class="roadmap">
+
+<div class="roadmap-item">
+
+<div class="roadmap-number">
+01
+</div>
+
+<h3>
+Visual
+</h3>
+
+</div>
+
+<div class="roadmap-item">
+
+<div class="roadmap-number">
+02
+</div>
+
+<h3>
+Context
+</h3>
+
+</div>
+
+<div class="roadmap-item">
+
+<div class="roadmap-number">
+03
+</div>
+
+<h3>
+Voice
+</h3>
+
+</div>
+
+<div class="roadmap-item">
+
+<div class="roadmap-number">
+04
+</div>
+
+<h3>
+Connection
+</h3>
+
+</div>
+
+<div class="roadmap-item">
+
+<div class="roadmap-number">
+05
+</div>
+
+<h3>
+Navigation
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     REFLECTION
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="reflection">
+
+<div>
+
+<div class="kicker">
+17 / What This Exploration Taught Us
+</div>
+
+<h2>
+Sometimes the smallest problem reveals the bigger experience.
+</h2>
+
+</div>
+
+
+<div class="insights">
+
+<div class="insight">
+
+<strong>
+Communication isn't always verbal.
+</strong>
+
+<span>
+Gestures, icons, directions and confirmations can
+become part of the interaction.
+</span>
+
+</div>
+
+
+<div class="insight">
+
+<strong>
+Simplicity requires decisions.
+</strong>
+
+<span>
+Reducing the product to two primary actions
+created more clarity than adding features.
+</span>
+
+</div>
+
+
+<div class="insight">
+
+<strong>
+Offline can be an experience decision.
+</strong>
+
+<span>
+For travel, availability can become part of
+the experience strategy.
+</span>
+
+</div>
+
+
+<div class="insight">
+
+<strong>
+Knowing what not to build is part of designing.
+</strong>
+
+<span>
+Scope is not only a development constraint.
+It is a product decision.
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+     ========================= -->
+
+<section class="final">
+
+<div class="wrap">
+
+<h2>
+
+Maybe travel communication isn't
+about translating everything.
+
+<br><br>
+
+Maybe it's about making intent
+easier to understand.
+
+</h2>
+
+<p>
+
+WAYFIND is an independent product exploration
+by Design That Evolve.
+
+Problem → Thinking → Experience → Interface → Prototype
+
+</p>
+
+<a class="cta" href="index.html#connect">
+Start a conversation →
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<div class="wrap">
+
+<div>
+© 2026 Design That Evolve
+</div>
+
+<div class="footer-tagline">
+Where we think beyond the screen.
+</div>
+
+</div>
+
+</footer>
+
+
+</body>
+
+</html>
