@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Projects — Design That Evolve</title>
+
+<link rel="icon" type="image/png" sizes="32x32" href="dte_favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="dte_favicon.png">
+<link rel="shortcut icon" href="dte_favicon.png">
+<link rel="apple-touch-icon" href="dte_favicon.png">
+
+<style>
+
+:root{
+  --bg:#f4f3ee;
+  --ink:#11110f;
+  --muted:#706d66;
+  --line:#d8d5cc;
+  --card:#fbfaf6;
+  --dark:#171714;
+  --white:#f7f6f1;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.25;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.wrap{
+  width:min(1180px,calc(100% - 40px));
+  margin:auto;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav{
+  height:78px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(244,243,238,.92);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  padding:0 max(20px,calc((100vw - 1180px)/2));
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  font-weight:800;
+  letter-spacing:-.05em;
+}
+
+.brand img{
+  width:36px;
+  height:36px;
+  object-fit:contain;
+}
+
+.brand span{
+  font-weight:800;
+}
+
+.brand span b{
+  font-weight:400;
+}
+
+.links{
+  display:flex;
+  gap:25px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.links a{
+  transition:color .2s ease;
+}
+
+.links a:hover{
+  color:var(--ink);
+}
+
+.navbtn{
+  background:linear-gradient(135deg,#7A5CFF,#0084FF);
+  color:#fff;
+  padding:10px 15px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* =========================
+   PAGE INTRO
+   ========================= */
+
+.page{
+  padding-top:78px;
+}
+
+.hero{
+  min-height:calc(100vh - 78px);
+  padding:110px 0 90px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-bottom:1px solid var(--line);
+}
+
+.eyebrow,
+.kicker{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:800;
+}
+
+.dot{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#7A5CFF,#0084FF);
+  border:1px solid var(--ink);
+  margin-right:7px;
+}
+
+.hero h1{
+  font-size:clamp(58px,9vw,126px);
+  line-height:.86;
+  letter-spacing:-.08em;
+  margin:25px 0 45px;
+  max-width:900px;
+}
+
+.hero-bottom{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:50px;
+  max-width:900px;
+}
+
+.hero-lead{
+  font-size:20px;
+  letter-spacing:-.025em;
+  max-width:650px;
+}
+
+.hero-note{
+  border-left:1px solid var(--ink);
+  padding-left:18px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* =========================
+   PROJECT SECTION
+   ========================= */
+
+section{
+  padding:100px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.head{
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  margin-bottom:45px;
+}
+
+.title{
+  font-size:clamp(38px,5vw,70px);
+  line-height:.94;
+  letter-spacing:-.065em;
+  margin:12px 0 0;
+  max-width:760px;
+}
+
+.intro{
+  max-width:360px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* =========================
+   PROJECT GRID
+   ========================= */
+
+.projects{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.project{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:25px;
+  overflow:hidden;
+  transition:
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+.project:hover{
+  transform:translateY(-5px);
+  border-color:#aaa69c;
+}
+
+.project-visual{
+  height:460px;
+  background:#e8e6df;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.project-visual img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.project-placeholder{
+  padding:40px;
+  text-align:center;
+}
+
+.project-placeholder .placeholder-label{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:800;
+  color:var(--muted);
+  margin-bottom:20px;
+}
+
+.project-placeholder h3{
+  font-size:clamp(42px,5vw,72px);
+  line-height:.88;
+  letter-spacing:-.07em;
+  margin:0;
+}
+
+.project-content{
+  padding:30px;
+}
+
+.project-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+  font-weight:800;
+  color:var(--muted);
+}
+
+.project h3{
+  font-size:36px;
+  line-height:.95;
+  letter-spacing:-.055em;
+  margin:30px 0 12px;
+}
+
+.project p{
+  color:var(--muted);
+  font-size:14px;
+  max-width:480px;
+  margin:0;
+}
+
+.project-link{
+  display:inline-block;
+  margin-top:25px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.project.dark{
+  background:var(--dark);
+  color:var(--white);
+  border-color:var(--dark);
+}
+
+.project.dark p{
+  color:#bbb;
+}
+
+.project.dark .project-meta{
+  color:#999;
+}
+
+.project.dark .project-visual{
+  background:#20201d;
+}
+
+.project.dark .project-link{
+  color:#fff;
+}
+
+/* =========================
+   COMING SOON
+   ========================= */
+
+.coming{
+  margin-top:14px;
+  border:1px dashed #aaa69c;
+  border-radius:25px;
+  padding:35px;
+  color:var(--muted);
+}
+
+.coming strong{
+  display:block;
+  color:var(--ink);
+  font-size:16px;
+  margin-bottom:7px;
+}
+
+/* =========================
+   FINAL
+   ========================= */
+
+.final{
+  background:var(--dark);
+  color:var(--white);
+  padding:110px 0;
+}
+
+.final h2{
+  font-size:clamp(50px,7vw,100px);
+  line-height:.86;
+  letter-spacing:-.075em;
+  max-width:950px;
+  margin:0;
+}
+
+.final p{
+  color:#bbb;
+  max-width:550px;
+  margin-top:30px;
+  font-size:14px;
+}
+
+.cta{
+  display:inline-block;
+  margin-top:25px;
+  background:linear-gradient(135deg,#7A5CFF,#0084FF);
+  color:#fff;
+  padding:15px 19px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:13px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+  background:var(--dark);
+  color:#999;
+  border-top:1px solid #34332f;
+  padding:22px 0;
+  font-size:11px;
+}
+
+footer .wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+}
+
+.footer-tagline{
+  color:#777;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:800px){
+
+  .links{
+    display:none;
+  }
+
+  .brand img{
+    width:30px;
+    height:30px;
+  }
+
+  .hero{
+    min-height:calc(100svh - 68px);
+    padding:90px 0 60px;
+  }
+
+  .hero-bottom{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .hero h1{
+    font-size:clamp(56px,17vw,90px);
+  }
+
+  .head{
+    display:block;
+  }
+
+  .intro{
+    margin-top:20px;
+  }
+
+  .projects{
+    grid-template-columns:1fr;
+  }
+
+  .project-visual{
+    height:360px;
+  }
+
+  .project-content{
+    padding:25px;
+  }
+
+  footer .wrap{
+    display:block;
+  }
+
+  .footer-tagline{
+    margin-top:15px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<a class="brand" href="index.html">
+  <img src="dte_Logo.png" alt="Design That Evolve logo">
+  <span>Design that <b>Evolve</b></span>
+</a>
+
+<div class="links">
+  <a href="index.html#room">Room to Evolve</a>
+  <a href="projects.html">Projects</a>
+  <a href="index.html#founder">Founder</a>
+  <a href="index.html#connect">Connect</a>
+  <a href="index.html#faq">FAQ</a>
+</div>
+
+<a class="navbtn" href="index.html#room">
+  Enter the Room →
+</a>
+
+</nav>
+
+</header>
+
+
+<main class="page">
+
+<!-- =========================
+     HERO
+     ========================= -->
+
+<section class="hero">
+
+<div class="wrap">
+
+<div class="eyebrow">
+  <span class="dot"></span>
+  01 / Projects
+</div>
+
+<h1>
+  Think.<br>
+  Explore.<br>
+  Build.
+</h1>
+
+<div class="hero-bottom">
+
+<div class="hero-lead">
+  Projects created to explore what happens when we understand the problem before rushing toward the screen.
+</div>
+
+<div class="hero-note">
+  Not just interface showcases.<br><br>
+  Each project documents a question, an experience and the decisions behind what was designed.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+     ========================= -->
+
+<section>
+
+<div class="wrap">
+
+<div class="head">
+
+<div>
+
+<div class="kicker">
+  02 / Selected explorations
+</div>
+
+<h2 class="title">
+  The work behind the questions.
+</h2>
+
+</div>
+
+<div class="intro">
+  Independent product explorations and experience-led work by Design That Evolve.
+</div>
+
+</div>
+
+
+<div class="projects">
+
+
+<!-- WAYFIND -->
+
+<a class="project" href="wayfind.html">
+
+<div class="project-visual">
+
+<img
+src="wayfind/wayfind-hero.png"
+alt="WAYFIND visual communication travel app concept"
+>
+
+</div>
+
+<div class="project-content">
+
+<div class="project-meta">
+  <span>01 / Product Exploration</span>
+  <span>UX · UI</span>
+</div>
+
+<h3>
+  WAYFIND
+</h3>
+
+<p>
+  What if you could communicate without speaking the same language?
+  An exploration into visual communication for travelers.
+</p>
+
+<span class="project-link">
+  Explore the case study →
+</span>
+
+</div>
+
+</a>
+
+
+<!-- SAYAHak -->
+
+<a class="project dark" href="#">
+
+<div class="project-visual">
+
+<div class="project-placeholder">
+
+<div class="placeholder-label">
+  02 / Product Exploration
+</div>
+
+<h3>
+  SAYAHak<br>
+  AI
+</h3>
+
+</div>
+
+</div>
+
+<div class="project-content">
+
+<div class="project-meta">
+  <span>02 / Healthcare</span>
+  <span>Coming Soon</span>
+</div>
+
+<h3>
+  Sayahak AI
+</h3>
+
+<p>
+  Exploring how AI-supported healthcare experiences can work
+  across Tier 2 and Tier 3 environments.
+</p>
+
+<span class="project-link">
+  Coming soon →
+</span>
+
+</div>
+
+</a>
+
+
+</div>
+
+
+<div class="coming">
+
+<strong>
+More questions are being explored.
+</strong>
+
+New projects will appear here as the thinking moves from
+question → exploration → prototype.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+     ========================= -->
+
+<section class="final">
+
+<div class="wrap">
+
+<h2>
+  Don't just look at<br>
+  what was designed.<br>
+  Look at <i>why.</i>
+</h2>
+
+<p>
+  Every project is an opportunity to understand the problem,
+  question the obvious and build only what the experience actually needs.
+</p>
+
+<a class="cta" href="index.html#connect">
+  Start a conversation →
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="wrap">
+
+<div>
+  © 2026 Design That Evolve
+</div>
+
+<div class="footer-tagline">
+  Where we think beyond the screen.
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
