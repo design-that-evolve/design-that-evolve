@@ -212,10 +212,14 @@ section{
 }
 
 .statement h2{
+  margin:0;
   font-size:clamp(48px,6vw,86px);
   line-height:.9;
   letter-spacing:-.075em;
-  margin:0;
+}
+
+.statement h2 br{
+  display:none;
 }
 
 .statement-copy{
@@ -312,24 +316,19 @@ section{
    SECTION IMAGE SIZING
    ========================= */
 
+/* =========================
+   SECTION IMAGE SIZING
+   ========================= */
+
 .section-image{
   margin-top:60px;
 }
 
 .section-image img{
   width:100%;
-  height:520px;
-  object-fit:contain;
+  height:auto;
   display:block;
   background:var(--card);
-}
-
-.section-10-image img{
-  height:520px;
-}
-  
-.section-12-image img{
-  height:520px;
 }
   
 .image-caption{
@@ -484,6 +483,7 @@ section{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:14px;
+  margin-top:60px;
 }
 
 .offline-panel{
@@ -599,6 +599,28 @@ section{
 .system-image{
   grid-column:1 / -1;
   margin-top:30px;
+}
+
+/* =========================
+   SECTION HEAD
+   ========================= */
+
+.head{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:60px;
+  align-items:end;
+}
+
+.head .title{
+  margin:20px 0 0;
+}
+
+.intro{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.5;
+  max-width:520px;
 }
 
 /* =========================
@@ -799,6 +821,13 @@ section{
 
 @media(max-width:800px){
 
+  .head{
+  grid-template-columns:1fr;
+  gap:35px;
+}
+  .statement h2{
+  white-space:normal;
+}
   .prototype{
     grid-template-columns:1fr;
   }
@@ -1355,7 +1384,7 @@ alt="WAYFIND product exploration"
 
 <h2>
 You know what you need.
-<br><br>
+<br>
 You just don't know how to ask.
 </h2>
 
@@ -1957,7 +1986,7 @@ not studied.
 
 </div>
 
-<div class="image-block section-image section-10-image">
+<div class="image-block">
 
 <img
   src="wayfind100.png"
@@ -2133,7 +2162,7 @@ Foreign price
 </div>
 
 </div>
-<div class="image-block section-image section-12-image">
+<div class="image-block">
 
 <img
   src="wayfind12.png"
@@ -2174,18 +2203,14 @@ compete with the communication itself.
 
 </div>
 
-<!--<div class="image-block system-image">
+<div class="image-block system-image">
 
 <img
-src="wayfind/wayfind-system.png"
+src="wayfind_design.png"
 alt="WAYFIND design system"
 >
 
-<div class="image-caption">
-Typography · Iconography · Components · Communication states
 </div>
-
-</div>-->
 
 </div>
 
@@ -2248,15 +2273,25 @@ Typography · Iconography · Components · Communication states
 
         <div class="think-options">
 
-          <button
-            class="think-option"
-            type="button"
-            data-modal="persona"
-          >
-            <span>
-              Persona &amp; Stakeholders + Empathy Mapping
-            </span>
-          </button>
+         <button
+  class="think-option"
+  type="button"
+  data-modal="persona"
+>
+  <span>
+    Persona &amp; Stakeholders
+  </span>
+</button>
+
+<button
+  class="think-option"
+  type="button"
+  data-modal="empathy"
+>
+  <span>
+    Empathy Mapping
+  </span>
+</button>
 
 
           <button
@@ -2313,15 +2348,21 @@ Typography · Iconography · Components · Communication states
           The UX thinking was translated into a high-fidelity
           interface and interactive product prototype.
         </p>
-
-        <a
+        
+        <br>
+        
+        <p>
+          COMING SOON
+        </p>
+        
+       <!-- <a
           class="prototype-link"
           href="YOUR_FIGMA_LINK_HERE"
           target="_blank"
           rel="noopener noreferrer"
         >
           Open High-Fidelity Prototype →
-        </a>
+        </a> -->
 
       </div>
 
@@ -2360,8 +2401,8 @@ Typography · Iconography · Components · Communication states
       </div>
 
       <h3>
-        Persona & Stakeholders + Empathy Mapping
-      </h3>
+  Persona & Stakeholders
+</h3>
 
       <p class="research-modal-description">
         Mapping the people involved in the experience helped
@@ -2374,13 +2415,45 @@ Typography · Iconography · Components · Communication states
 
         <img
           src="wayfind_persona.png"
-          alt="WAYFIND persona, stakeholders and empathy mapping"
+          alt="WAYFIND persona and stakeholders"
         >
 
       </div>
 
     </div>
+<!-- EMPATHY MAPPING -->
 
+<div
+  class="research-modal-panel"
+  data-panel="empathy"
+  hidden
+>
+
+  <div class="research-modal-number">
+    02 / UX Research & Strategy
+  </div>
+
+  <h3>
+    Empathy Mapping
+  </h3>
+
+  <p class="research-modal-description">
+    Empathy mapping helped understand what travelers
+    might be thinking, feeling, saying and doing while
+    navigating unfamiliar environments and trying to
+    communicate without a shared language.
+  </p>
+
+  <div class="research-modal-image">
+
+    <img
+      src="wayfind_empathy.png"
+      alt="WAYFIND empathy mapping"
+    >
+
+  </div>
+
+</div>
 
     <!-- CUSTOMER JOURNEY -->
 
@@ -2391,7 +2464,7 @@ Typography · Iconography · Components · Communication states
     >
 
       <div class="research-modal-number">
-        02 / UX Research & Strategy
+        03 / UX Research & Strategy
       </div>
 
       <h3>
@@ -2425,7 +2498,7 @@ Typography · Iconography · Components · Communication states
     >
 
       <div class="research-modal-number">
-        03 / UX Research & Strategy
+        04 / UX Research & Strategy
       </div>
 
       <h3>
@@ -2460,7 +2533,7 @@ Typography · Iconography · Components · Communication states
     >
 
       <div class="research-modal-number">
-        04 / UX Research & Strategy
+        05 / UX Research & Strategy
       </div>
 
       <h3>
@@ -2558,7 +2631,7 @@ without sharing a language?
 <!-- =========================
      FUTURE
      ========================= -->
-
+<!--
 <section>
 
 <div class="wrap">
@@ -2656,7 +2729,7 @@ Navigation
 </div>
 
 </section>
-
+-->
 
 <!-- =========================
      REFLECTION
@@ -2671,7 +2744,7 @@ Navigation
 <div>
 
 <div class="kicker">
-17 / What This Exploration Taught Us
+16 / What This Exploration Taught Us
 </div>
 
 <h2>
@@ -2747,7 +2820,7 @@ It is a product decision.
   <!-- =========================
      EXPLORE MORE PROJECTS
      ========================= -->
-
+<!--
 <section class="explore-projects">
 
   <div class="wrap">
@@ -2906,7 +2979,8 @@ It is a product decision.
   </div>
 
 </section>
-
+  
+-->
 <!-- =========================
      FINAL
      ========================= -->
