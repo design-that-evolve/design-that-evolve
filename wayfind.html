@@ -308,6 +308,30 @@ section{
   display:block;
 }
 
+/* =========================
+   SECTION IMAGE SIZING
+   ========================= */
+
+.section-image{
+  margin-top:60px;
+}
+
+.section-image img{
+  width:100%;
+  height:520px;
+  object-fit:contain;
+  display:block;
+  background:var(--card);
+}
+
+.section-10-image img{
+  height:520px;
+}
+  
+.section-12-image img{
+  height:520px;
+}
+  
 .image-caption{
   padding:18px 22px;
   color:var(--muted);
@@ -440,7 +464,7 @@ section{
 
 .conditions{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(3,1fr);
   margin-top:60px;
   border-top:1px solid #34332f;
 }
@@ -581,9 +605,13 @@ section{
    PROTOTYPE
    ========================= */
 
+/* =========================
+   THINKING / DESIGN
+   ========================= */
+
 .prototype{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:1fr 1fr;
   gap:14px;
 }
 
@@ -592,30 +620,206 @@ section{
   border-radius:25px;
   overflow:hidden;
   background:var(--card);
+  padding:35px;
 }
 
-.prototype-card img{
-  width:100%;
-  display:block;
-  aspect-ratio:4 / 5;
-  object-fit:cover;
+.prototype-card.dark{
+  background:var(--dark);
+  color:var(--white);
 }
 
-.prototype-label{
-  padding:20px;
-}
-
-.prototype-label small{
+.prototype-number{
   font-size:10px;
   text-transform:uppercase;
   letter-spacing:.12em;
   color:var(--muted);
 }
 
-.prototype-label h3{
-  font-size:25px;
-  margin:8px 0 0;
-  letter-spacing:-.045em;
+.prototype-card.dark .prototype-number{
+  color:#999;
+}
+
+.prototype-card h3{
+  font-size:clamp(38px,5vw,65px);
+  line-height:.9;
+  letter-spacing:-.07em;
+  margin:65px 0 15px;
+}
+
+.prototype-card p{
+  color:var(--muted);
+  font-size:14px;
+  max-width:500px;
+}
+
+.prototype-card.dark p{
+  color:#bbb;
+}
+
+/* THINK SUB OPTIONS */
+
+.think-options{
+  display:grid;
+  gap:0;
+  margin-top:35px;
+  border-top:1px solid var(--line);
+}
+
+.think-option{
+  width:100%;
+  border:0;
+  border-bottom:1px solid var(--line);
+  background:none;
+  color:inherit;
+  padding:18px 0;
+  text-align:left;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  font-family:inherit;
+}
+
+.think-option span{
+  font-size:14px;
+  line-height:1.25;
+}
+
+.think-option::after{
+  content:"↗";
+  font-size:18px;
+  color:var(--muted);
+  transition:transform .2s ease;
+}
+
+.think-option:hover::after{
+  transform:translate(3px,-3px);
+}
+
+/* DESIGN LINK */
+
+.prototype-link{
+  display:inline-block;
+  margin-top:35px;
+  padding:13px 18px;
+  border:1px solid currentColor;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+  transition:.2s ease;
+}
+
+.prototype-link:hover{
+  transform:translateY(-2px);
+}
+
+/* POPUP */
+
+.research-modal{
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  background:rgba(17,17,15,.72);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+
+.research-modal.active{
+  display:flex;
+}
+
+.research-modal-content{
+  width:min(950px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:var(--card);
+  color:var(--ink);
+  border-radius:28px;
+  border:1px solid var(--line);
+  position:relative;
+  padding:35px;
+}
+
+.research-modal-close{
+  position:absolute;
+  top:20px;
+  right:20px;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:var(--card);
+  cursor:pointer;
+  font-size:18px;
+  z-index:2;
+}
+
+.research-modal-number{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+
+.research-modal h3{
+  font-size:clamp(35px,5vw,60px);
+  line-height:.9;
+  letter-spacing:-.07em;
+  margin:15px 0;
+  max-width:700px;
+}
+
+.research-modal-description{
+  color:var(--muted);
+  font-size:14px;
+  max-width:650px;
+  line-height:1.5;
+  margin-bottom:30px;
+}
+
+.research-modal-image{
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  background:#eee;
+}
+
+.research-modal-image img{
+  width:100%;
+  display:block;
+  height:auto;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .prototype{
+    grid-template-columns:1fr;
+  }
+
+  .prototype-card{
+    padding:28px;
+  }
+
+  .prototype-card h3{
+    margin-top:45px;
+  }
+
+  .research-modal{
+    padding:15px;
+  }
+
+  .research-modal-content{
+    padding:25px;
+    border-radius:22px;
+  }
+
 }
 
 /* =========================
@@ -749,6 +953,122 @@ section{
 }
 
 /* =========================
+   EXPLORE MORE PROJECTS
+   ========================= */
+
+.explore-projects{
+  background:var(--bg);
+}
+
+.explore-projects-head{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:end;
+}
+
+.explore-projects-head h2{
+  font-size:clamp(45px,6vw,80px);
+  line-height:.9;
+  letter-spacing:-.07em;
+  margin:0;
+}
+
+.explore-projects-copy{
+  color:var(--muted);
+  font-size:15px;
+  max-width:500px;
+}
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:60px;
+}
+
+.project-card{
+  display:block;
+  border:1px solid var(--line);
+  border-radius:25px;
+  overflow:hidden;
+  background:var(--card);
+  transition:
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+.project-card:hover{
+  transform:translateY(-5px);
+  border-color:#aaa;
+}
+
+.project-card-image{
+  aspect-ratio:16 / 10;
+  overflow:hidden;
+  background:#e7e5de;
+}
+
+.project-card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .35s ease;
+}
+
+.project-card:hover .project-card-image img{
+  transform:scale(1.03);
+}
+
+.project-card-content{
+  padding:25px;
+}
+
+.project-card-number{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+}
+
+.project-card h3{
+  font-size:30px;
+  line-height:.95;
+  letter-spacing:-.055em;
+  margin:12px 0;
+}
+
+.project-card p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.4;
+  margin:0;
+}
+
+.project-card-link{
+  display:inline-block;
+  margin-top:22px;
+  font-size:12px;
+  font-weight:800;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  .explore-projects-head{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .project-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* =========================
    FINAL
    ========================= */
 
@@ -820,7 +1140,11 @@ footer .wrap{
   section{
     padding:80px 0;
   }
-
+  
+.section-image img{
+  height:auto;
+  min-height:0;
+}
   .hero{
     padding:75px 0 50px;
   }
@@ -1073,7 +1397,7 @@ Maybe the problem isn't translation.
 
 </div>
 
-</div>
+</div> 
 
 </section>
 
@@ -1633,14 +1957,16 @@ not studied.
 
 </div>
 
-<div class="image-block">
+<div class="image-block section-image section-10-image">
 
 <img
-src="wayfind100.png"
-alt="WAYFIND screen usage possibilities"
+  src="wayfind100.png"
+  alt="WAYFIND screen usage possibilities"
 >
 
 </div>
+
+  
 </section>
 
 
@@ -1807,14 +2133,13 @@ Foreign price
 </div>
 
 </div>
-
-  <div class="image-block">
+<div class="image-block section-image section-12-image">
 
 <img
-src="wayfind12.png"
-alt="WAYFIND currency  converter"
+  src="wayfind12.png"
+  alt="WAYFIND currency converter"
 >
-  
+
 </div>
 </section>
 
@@ -1870,108 +2195,298 @@ Typography · Iconography · Components · Communication states
 
 
 <!-- =========================
-     PROTOTYPE
+     PROTOTYPE / THINKING
      ========================= -->
 
 <section>
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="head">
+    <div class="head">
 
-<div>
+      <div>
 
-<div class="kicker">
-14 / From Thinking to Making
-</div>
+        <div class="kicker">
+          14 / From Thinking to Making
+        </div>
 
-<h2 class="title">
-An idea becomes more useful when you can put it in someone's hands.
-</h2>
+        <h2 class="title">
+          An idea becomes more useful when you can put it in someone's hands.
+        </h2>
 
-</div>
+      </div>
 
-<div class="intro">
-The project moves from UX thinking into a
-functional product prototype.
-</div>
+      <div class="intro">
+        The project moves from UX research and strategy into
+        a high-fidelity product interface.
+      </div>
 
-</div>
-
-
-<div class="prototype">
-
-<!--<div class="prototype-card">
-
-<img
-src="wayfind/wayfind-figma.png"
-alt="WAYFIND Figma prototype"
->-->
-
-<div class="prototype-label">
-
-<small>
-01 / Think
-</small>
-
-<h3>
-Figma / UX Flow
-</h3>
-
-</div>
-
-</div>
+    </div>
 
 
-<!--<div class="prototype-card">
+    <div class="prototype">
 
-<img
-src="wayfind/wayfind-ui.png"
-alt="WAYFIND high fidelity interface"
->-->
+      <!-- 01 THINK -->
 
-<div class="prototype-label">
+      <div class="prototype-card">
 
-<small>
-02 / Design
-</small>
+        <div class="prototype-number">
+          01 / Think
+        </div>
 
-<h3>
-High-Fidelity UI
-</h3>
+        <h3>
+          UX Research<br>
+          & Flow
+        </h3>
 
-</div>
+        <p>
+          Research, synthesis and experience mapping helped
+          define the structure behind WAYFIND before moving
+          into interface design.
+        </p>
 
-</div>
+
+        <div class="think-options">
+
+          <button
+            class="think-option"
+            type="button"
+            data-modal="persona"
+          >
+            <span>
+              Persona &amp; Stakeholders + Empathy Mapping
+            </span>
+          </button>
 
 
-<!--<div class="prototype-card">
+          <button
+            class="think-option"
+            type="button"
+            data-modal="journey"
+          >
+            <span>
+              Customer Journey Mapping
+            </span>
+          </button>
 
-<img
-src="wayfind/wayfind-android.png"
-alt="WAYFIND Android prototype"
->-->
 
-<div class="prototype-label">
+          <button
+            class="think-option"
+            type="button"
+            data-modal="ia"
+          >
+            <span>
+              Information Architecture
+            </span>
+          </button>
 
-<small>
-03 / Test
-</small>
 
-<h3>
-Android Prototype
-</h3>
+          <button
+            class="think-option"
+            type="button"
+            data-modal="taskflow"
+          >
+            <span>
+              User Task Flow Based on Scenarios
+            </span>
+          </button>
 
-</div>
+        </div>
 
-</div>
+      </div>
 
-</div>
 
-</div>
+      <!-- 02 DESIGN -->
+
+      <div class="prototype-card dark">
+
+        <div class="prototype-number">
+          02 / Design
+        </div>
+
+        <h3>
+          High-Fidelity<br>
+          UI
+        </h3>
+
+        <p>
+          The UX thinking was translated into a high-fidelity
+          interface and interactive product prototype.
+        </p>
+
+        <a
+          class="prototype-link"
+          href="YOUR_FIGMA_LINK_HERE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open High-Fidelity Prototype →
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
+<!-- =========================
+     UX RESEARCH POPUPS
+     ========================= -->
 
+<div class="research-modal" id="researchModal">
+
+  <div class="research-modal-content">
+
+    <button
+      class="research-modal-close"
+      type="button"
+      aria-label="Close"
+    >
+      ×
+    </button>
+
+
+    <!-- PERSONA -->
+
+    <div
+      class="research-modal-panel"
+      data-panel="persona"
+      hidden
+    >
+
+      <div class="research-modal-number">
+        01 / UX Research & Strategy
+      </div>
+
+      <h3>
+        Persona & Stakeholders + Empathy Mapping
+      </h3>
+
+      <p class="research-modal-description">
+        Mapping the people involved in the experience helped
+        identify traveler needs, stakeholder relationships and
+        the emotions, motivations and frustrations that shape
+        communication in unfamiliar environments.
+      </p>
+
+      <div class="research-modal-image">
+
+        <img
+          src="wayfind_persona.png"
+          alt="WAYFIND persona, stakeholders and empathy mapping"
+        >
+
+      </div>
+
+    </div>
+
+
+    <!-- CUSTOMER JOURNEY -->
+
+    <div
+      class="research-modal-panel"
+      data-panel="journey"
+      hidden
+    >
+
+      <div class="research-modal-number">
+        02 / UX Research & Strategy
+      </div>
+
+      <h3>
+        Customer Journey Mapping
+      </h3>
+
+      <p class="research-modal-description">
+        The journey map helped identify the moments where
+        communication friction appears across the travel
+        experience and where WAYFIND could reduce uncertainty.
+      </p>
+
+      <div class="research-modal-image">
+
+        <img
+          src="wayfind_journey.png"
+          alt="WAYFIND customer journey mapping"
+        >
+
+      </div>
+
+    </div>
+
+
+    <!-- INFORMATION ARCHITECTURE -->
+
+    <div
+      class="research-modal-panel"
+      data-panel="ia"
+      hidden
+    >
+
+      <div class="research-modal-number">
+        03 / UX Research & Strategy
+      </div>
+
+      <h3>
+        Information Architecture
+      </h3>
+
+      <p class="research-modal-description">
+        The information architecture organised travel
+        intentions into a simple structure so users could
+        reach the right communication action without needing
+        to understand the system first.
+      </p>
+
+      <div class="research-modal-image">
+
+        <img
+          src="wayfind_IA.png"
+          alt="WAYFIND information architecture"
+        >
+
+      </div>
+
+    </div>
+
+
+    <!-- TASK FLOW -->
+
+    <div
+      class="research-modal-panel"
+      data-panel="taskflow"
+      hidden
+    >
+
+      <div class="research-modal-number">
+        04 / UX Research & Strategy
+      </div>
+
+      <h3>
+        User Task Flow Based on Scenarios
+      </h3>
+
+      <p class="research-modal-description">
+        Scenario-based task flows helped translate real travel
+        situations into clear steps, defining how a user moves
+        from intention to action and communication.
+      </p>
+
+      <div class="research-modal-image">
+
+        <img
+          src="wayfind_taskflow.png"
+          alt="WAYFIND user task flow based on scenarios"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
 <!-- =========================
      SCOPE
@@ -2229,6 +2744,168 @@ It is a product decision.
 
 </section>
 
+  <!-- =========================
+     EXPLORE MORE PROJECTS
+     ========================= -->
+
+<section class="explore-projects">
+
+  <div class="wrap">
+
+    <div class="explore-projects-head">
+
+      <div>
+
+        <div class="kicker">
+          18 / Explore More
+        </div>
+
+        <h2>
+          More questions.<br>
+          More things to explore.
+        </h2>
+
+      </div>
+
+      <div class="explore-projects-copy">
+
+        Explore other projects by Design That Evolve —
+        different questions, different contexts and different
+        approaches to designing experiences.
+
+      </div>
+
+    </div>
+
+
+    <div class="project-grid">
+
+
+      <!-- PROJECT 01 -->
+
+      <a
+        class="project-card"
+        href="projects.html"
+      >
+
+        <div class="project-card-image">
+
+          <img
+            src="YOUR_PROJECT_IMAGE_01.png"
+            alt="Design That Evolve project"
+          >
+
+        </div>
+
+        <div class="project-card-content">
+
+          <div class="project-card-number">
+            01 / Product Exploration
+          </div>
+
+          <h3>
+            WAYFIND
+          </h3>
+
+          <p>
+            Visual communication for travelers navigating
+            unfamiliar moments.
+          </p>
+
+          <span class="project-card-link">
+            Explore Case Study →
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- PROJECT 02 -->
+
+      <a
+        class="project-card"
+        href="YOUR_PROJECT_02_LINK.html"
+      >
+
+        <div class="project-card-image">
+
+          <img
+            src="YOUR_PROJECT_IMAGE_02.png"
+            alt="Design That Evolve project"
+          >
+
+        </div>
+
+        <div class="project-card-content">
+
+          <div class="project-card-number">
+            02 / Healthcare
+          </div>
+
+          <h3>
+            Sahayak AI
+          </h3>
+
+          <p>
+            Exploring how AI-supported healthcare experiences
+            can work across Tier 2 and Tier 3 environments.
+          </p>
+
+          <span class="project-card-link">
+            Coming Soon →
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- PROJECT 03 -->
+
+      <a
+        class="project-card"
+        href="YOUR_PROJECT_03_LINK.html"
+      >
+
+        <div class="project-card-image">
+
+          <img
+            src="YOUR_PROJECT_IMAGE_03.png"
+            alt="Design That Evolve project"
+          >
+
+        </div>
+
+        <div class="project-card-content">
+
+          <div class="project-card-number">
+            03 / Exploration
+          </div>
+
+          <h3>
+            More Coming Soon
+          </h3>
+
+          <p>
+            New questions and experience-led projects are
+            currently being explored.
+          </p>
+
+          <span class="project-card-link">
+            Explore →
+          </span>
+
+        </div>
+
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
 
 <!-- =========================
      FINAL
@@ -2287,6 +2964,96 @@ Where we think beyond the screen.
 
 </footer>
 
+<script>
+
+  const modal = document.getElementById("researchModal");
+
+  const modalPanels = document.querySelectorAll(
+    ".research-modal-panel"
+  );
+
+  const thinkOptions = document.querySelectorAll(
+    ".think-option"
+  );
+
+  const closeModalButton = document.querySelector(
+    ".research-modal-close"
+  );
+
+
+  function openResearchModal(panelName){
+
+    modalPanels.forEach(panel => {
+
+      panel.hidden =
+        panel.dataset.panel !== panelName;
+
+    });
+
+    modal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+  }
+
+
+  function closeResearchModal(){
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+  }
+
+
+  thinkOptions.forEach(option => {
+
+    option.addEventListener("click", () => {
+
+      const panelName =
+        option.dataset.modal;
+
+      openResearchModal(panelName);
+
+    });
+
+  });
+
+
+  closeModalButton.addEventListener(
+    "click",
+    closeResearchModal
+  );
+
+
+  modal.addEventListener("click", event => {
+
+    if(event.target === modal){
+
+      closeResearchModal();
+
+    }
+
+  });
+
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if(
+        event.key === "Escape" &&
+        modal.classList.contains("active")
+      ){
+
+        closeResearchModal();
+
+      }
+
+    }
+  );
+
+</script>
 
 </body>
 
